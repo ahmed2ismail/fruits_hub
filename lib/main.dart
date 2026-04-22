@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/helper/functions/on_generate_routes.dart';
+import 'package:fruits_hub/features/splash/presentation/view/splash_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const FruitHub());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FruitHub extends StatelessWidget {
+  const FruitHub({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Fruit Hub',
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: SplashView.routeName,
     );
   }
 }

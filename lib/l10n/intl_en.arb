@@ -1,0 +1,27 @@
+{
+    "@@locale": "en",
+    "skipButton": "Skip",
+    "@skipButton": {
+        "description": "Text for the skip button on onboarding screen"
+    },
+    "onBoardingWelcomePrefix": "Welcome to ",
+    "@onBoardingWelcomePrefix": {
+        "description": "Prefix for the welcome message on the onboarding screen"
+    },
+    "onBoardingSubtitle1": "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality.",
+    "@onBoardingSubtitle1": {
+        "description": "Subtitle for the first onboarding screen"
+    },
+    "onBoardingFreshFruitsPrefix": "Fresh Fruits",
+    "@onBoardingFreshFruitsPrefix": {
+        "description": "Prefix for the fresh fruits section on the onboarding screen"
+    },
+    "onBoardingSubtitle2": "We offer you the best selected fruits. Check out the details, images, and reviews to ensure you choose the perfect fruit.",
+    "@onBoardingSubtitle2": {
+        "description": "Subtitle for the second onboarding screen"
+    },
+    "OnBoardingWelcomePrefixButton": "Get Started",
+    "@OnBoardingWelcomePrefixButton": {
+        "description": "Text for the welcome button on the onboarding screen"
+    }
+}

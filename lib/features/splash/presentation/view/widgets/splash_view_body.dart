@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/features/onBoarding/presentation/view/on_boarding_view.dart';
 import 'package:svg_flutter/svg.dart';
@@ -29,7 +30,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: isEnglish() ? MainAxisAlignment.start : MainAxisAlignment.end,
             children: [SvgPicture.asset(AppAssets.imagesPlant)],
           ),
           SvgPicture.asset(AppAssets.imagesLogo),

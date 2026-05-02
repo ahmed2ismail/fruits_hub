@@ -25,6 +25,7 @@ class FruitHub extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       title: 'Fruit Hub',
+      theme: ThemeData(fontFamily: 'Cairo'),
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
     );

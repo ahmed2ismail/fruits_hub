@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_constants.dart';
 
 /// Calculates a responsive font size based on the screen width.
 ///
@@ -31,7 +32,7 @@ double getResponsiveFontSize({required double fontSize}) {
 }
 
 abstract class TextStyles {
-  static const String fontFamily = 'Cairo';
+  static const String fontFamily = AppConstants.kFontFamily;
 
   static final TextStyle bold13 = TextStyle(
     fontFamily: fontFamily,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/generated/l10n.dart';
+import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
 
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key, required this.currentPageIndex});
@@ -32,7 +33,11 @@ class GetStartedButton extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 16, left: 16, top: 29),
                   child: MaterialButton(
                     onPressed: () {
-                      // TODO: Navigate to Login/Home screen
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        LoginView.routeName,
+                        (route) => false,
+                      );
                     },
                     minWidth: double.infinity,
                     height: 54,

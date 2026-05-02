@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/generated/l10n.dart';
+import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({
@@ -22,10 +23,10 @@ class SkipButton extends StatelessWidget {
         ignoring: currentPageIndex != 0,
         child: TextButton(
           onPressed: () {
-            pageController.animateToPage(
-              1, // الانتقال إلى الصفحة الثانية (الفهرس 1)
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeInOut,
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              LoginView.routeName,
+              (route) => false,
             );
           },
           style: TextButton.styleFrom(overlayColor: Colors.transparent),

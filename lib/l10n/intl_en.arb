@@ -12,7 +12,7 @@
     "@onBoardingSubtitle1": {
         "description": "Subtitle for the first onboarding screen"
     },
-    "onBoardingFreshFruitsPrefix": "Fresh Fruits",
+    "onBoardingFreshFruitsPrefix": "Search and Shopping",
     "@onBoardingFreshFruitsPrefix": {
         "description": "Prefix for the fresh fruits section on the onboarding screen"
     },

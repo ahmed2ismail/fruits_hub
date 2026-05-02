@@ -80,10 +80,10 @@ class S {
     );
   }
 
-  /// `Fresh Fruits`
+  /// `Sear`
   String get onBoardingFreshFruitsPrefix {
     return Intl.message(
-      'Fresh Fruits',
+      'Sear',
       name: 'onBoardingFreshFruitsPrefix',
       desc: 'Prefix for the fresh fruits section on the onboarding screen',
       args: [],

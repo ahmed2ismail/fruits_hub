@@ -25,7 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("ابدأ الان"),
         "onBoardingFreshFruitsPrefix":
-            MessageLookupByLibrary.simpleMessage("فواكه طازجة"),
+            MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
         "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية."),
         "onBoardingSubtitle2": MessageLookupByLibrary.simpleMessage(

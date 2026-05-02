@@ -35,6 +35,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           return SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: ConstrainedBox(
+              // للتأكد من أن المحتوى يملأ الشاشة حتى لو كان قصيرًا
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

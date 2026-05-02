@@ -14,4 +14,7 @@ abstract class AppConstants {
   static const double kVerticalPadding16 = 16;
 
   static const double kVerticalPadding32 = 32;
+
+  // SharedPreferences Keys
+  static const String kOnboardingVisitedKey = 'onboarding_visited';
 }

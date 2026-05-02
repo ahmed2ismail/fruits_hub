@@ -36,6 +36,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.20.2
+  shared_preferences: ^2.5.5
   svg_flutter: ^0.0.1
 
 dev_dependencies:

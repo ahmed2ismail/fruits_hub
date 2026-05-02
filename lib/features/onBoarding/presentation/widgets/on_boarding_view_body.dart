@@ -30,38 +30,52 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              OnBoardingPageView(
-                controller: _pageController,
-                onPageChanged: (index) {
-                  setState(() {
-                    _currentPageIndex = index;
-                  });
-                },
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Top content (PageView, Skip button, Dots)
+                  Column(
+                    children: [
+                      Stack(
+                        children: [
+                          OnBoardingPageView(
+                            controller: _pageController,
+                            onPageChanged: (index) {
+                              setState(() {
+                                _currentPageIndex = index;
+                              });
+                            },
+                          ),
+                          Positioned(
+                            right: 16,
+                            top: 20,
+                            child: SkipButton(
+                              pageController: _pageController,
+                              currentPageIndex: _currentPageIndex,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 64),
+                      CustomDotsIndicator(
+                        currentPageIndex: _currentPageIndex,
+                        dotsCount: 2,
+                      ),
+                    ],
+                  ),
+                  // Bottom content (Get Started button)
+                  GetStartedButton(currentPageIndex: _currentPageIndex),
+                ],
               ),
-              Positioned(
-                right: 16,
-                top: 20,
-                child: SkipButton(
-                  pageController: _pageController,
-                  currentPageIndex: _currentPageIndex,
-                ),
-              ),
-            ],
-          ),
-          // Space between PageView and DotsIndicator
-          const SizedBox(height: 64),
-          CustomDotsIndicator(
-            currentPageIndex: _currentPageIndex,
-            dotsCount: 2,
-          ),
-          const Spacer(),
-          GetStartedButton(currentPageIndex: _currentPageIndex),
-        ],
+            ),
+          );
+        },
       ),
     );
   }

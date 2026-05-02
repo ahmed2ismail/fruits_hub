@@ -35,7 +35,7 @@ class PageViewItem extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 64), // المسافة بين قسم الصورة والعنوان
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.1),
         Text.rich(title, textAlign: TextAlign.center),
         const SizedBox(height: 24), // المسافة بين العنوان والعنوان الفرعي
         Padding(

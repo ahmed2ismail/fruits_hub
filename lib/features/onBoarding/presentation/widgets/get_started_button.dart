@@ -29,7 +29,7 @@ class GetStartedButton extends StatelessWidget {
               key: const ValueKey('GetStarted'),
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.only(right: 16, left: 16, top: 29),
                   child: MaterialButton(
                     onPressed: () {
                       // TODO: Navigate to Login/Home screen

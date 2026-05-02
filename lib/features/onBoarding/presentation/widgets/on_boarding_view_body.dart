@@ -43,9 +43,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                   });
                 },
               ),
-              SkipButton(
-                pageController: _pageController,
-                currentPageIndex: _currentPageIndex,
+              Positioned(
+                right: 16,
+                top: 20,
+                child: SkipButton(
+                  pageController: _pageController,
+                  currentPageIndex: _currentPageIndex,
+                ),
               ),
             ],
           ),

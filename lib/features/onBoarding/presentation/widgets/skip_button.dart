@@ -20,24 +20,18 @@ class SkipButton extends StatelessWidget {
       duration: const Duration(milliseconds: 300),
       child: IgnorePointer(
         ignoring: currentPageIndex != 0,
-        child: Positioned(
-          right: 16,
-          top: 20,
-          child: TextButton(
-            onPressed: () {
-              pageController.animateToPage(
-                1, // الانتقال إلى الصفحة الثانية (الفهرس 1)
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            },
-            style: TextButton.styleFrom(overlayColor: Colors.transparent),
-            child: Text(
-              S.of(context).skipButton,
-              style: TextStyles.regular13.copyWith(
-                color: AppColors.grayscale400,
-              ),
-            ),
+        child: TextButton(
+          onPressed: () {
+            pageController.animateToPage(
+              1, // الانتقال إلى الصفحة الثانية (الفهرس 1)
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeInOut,
+            );
+          },
+          style: TextButton.styleFrom(overlayColor: Colors.transparent),
+          child: Text(
+            S.of(context).skipButton,
+            style: TextStyles.regular13.copyWith(color: AppColors.grayscale400),
           ),
         ),
       ),

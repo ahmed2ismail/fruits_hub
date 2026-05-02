@@ -1,72 +1,119 @@
+import 'dart:ui' as ui;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+/// Calculates a responsive font size based on the screen width.
+///
+/// This function uses [PlatformDispatcher] to get the screen width, so it
+/// doesn't require a [BuildContext].
+double getResponsiveFontSize({required double fontSize}) {
+  // Get screen width from PlatformDispatcher to avoid context dependency.
+  final dispatcher = ui.PlatformDispatcher.instance;
+  final physicalWidth = dispatcher.views.first.physicalSize.width;
+  final devicePixelRatio = dispatcher.views.first.devicePixelRatio;
+  final width = physicalWidth / devicePixelRatio;
+
+  // Determine the scale factor based on screen width breakpoints.
+  double scaleFactor = width < 600
+      ? width / 400
+      : width < 900
+      ? width / 700
+      : width / 1000;
+  double responsiveFontSize = fontSize * scaleFactor;
+
+  // Clamp the font size to prevent it from becoming too small or too large.
+  // A more effective approach is to clamp based on the original `fontSize`.
+  // Here, we clamp it to be between 80% and 120% of the *original* font size.
+  double lowerLimit = fontSize * 0.8;
+  double upperLimit = fontSize * 1.2;
+
+  return responsiveFontSize.clamp(lowerLimit, upperLimit);
+}
+
 abstract class TextStyles {
-  static const TextStyle bold13 = TextStyle(
+  static const String fontFamily = 'Cairo';
+
+  static final TextStyle bold13 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.bold,
-    fontSize: 13,
-  );
-  static const TextStyle bold23 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 23,
+    fontSize: getResponsiveFontSize(fontSize: 13),
   );
 
-  static const TextStyle semiBold13 = TextStyle(
+  static final TextStyle bold23 = TextStyle(
+    fontFamily: fontFamily,
+    fontWeight: FontWeight.bold,
+    fontSize: getResponsiveFontSize(fontSize: 23),
+  );
+
+  static final TextStyle semiBold13 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.w600,
-    fontSize: 13,
+    fontSize: getResponsiveFontSize(fontSize: 13),
   );
 
-  static const TextStyle regular13 = TextStyle(
+  static final TextStyle regular13 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.normal,
-    fontSize: 13,
+    fontSize: getResponsiveFontSize(fontSize: 13),
   );
 
-  static const TextStyle bold16 = TextStyle(
+  static final TextStyle bold16 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.bold,
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
   );
 
-  static const TextStyle bold19 = TextStyle(
+  static final TextStyle bold19 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.bold,
-    fontSize: 19,
+    fontSize: getResponsiveFontSize(fontSize: 19),
   );
 
-  static const TextStyle semiBold16 = TextStyle(
+  static final TextStyle semiBold16 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.w600,
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
   );
 
-  static const TextStyle bold28 = TextStyle(
+  static final TextStyle bold28 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.bold,
-    fontSize: 28,
+    fontSize: getResponsiveFontSize(fontSize: 28),
   );
 
-  static const TextStyle regular22 = TextStyle(
+  static final TextStyle regular22 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.normal,
-    fontSize: 22,
+    fontSize: getResponsiveFontSize(fontSize: 22),
   );
 
-  static const TextStyle semiBold11 = TextStyle(
+  static final TextStyle semiBold11 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.w600,
-    fontSize: 11,
+    fontSize: getResponsiveFontSize(fontSize: 11),
   );
 
-  static const TextStyle medium15 = TextStyle(
+  static final TextStyle medium15 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.w500,
-    fontSize: 15,
+    fontSize: getResponsiveFontSize(fontSize: 15),
   );
 
-  static const TextStyle regular26 = TextStyle(
+  static final TextStyle regular26 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.normal,
-    fontSize: 26,
+    fontSize: getResponsiveFontSize(fontSize: 26),
   );
 
-  static const TextStyle regular16 = TextStyle(
+  static final TextStyle regular16 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.normal,
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
   );
 
-  static const TextStyle regular11 = TextStyle(
+  static final TextStyle regular11 = TextStyle(
+    fontFamily: fontFamily,
     fontWeight: FontWeight.normal,
-    fontSize: 11,
+    fontSize: getResponsiveFontSize(fontSize: 11),
   );
 }

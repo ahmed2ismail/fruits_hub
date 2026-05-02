@@ -21,9 +21,11 @@ class CustomDotsIndicator extends StatelessWidget {
       animate: true,
       decorator: DotsDecorator(
         activeColor: AppColors.green1_500,
-        color: AppColors.greenLight.withValues(alpha: 0.5),
+        color: currentPageIndex == 1
+            ? AppColors.green1_500
+            : AppColors.greenLight.withValues(alpha: 0.5),
         activeSize: const Size(11, 11),
-        size: const Size(9, 9),
+        size: currentPageIndex == 1 ? const Size(11, 11) : const Size(9, 9),
         spacing: const EdgeInsets.symmetric(horizontal: 5),
         activeShape: const CircleBorder(),
         shape: const CircleBorder(),

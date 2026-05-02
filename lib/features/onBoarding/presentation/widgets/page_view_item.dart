@@ -43,8 +43,6 @@ class PageViewItem extends StatelessWidget {
           child: Text(
             subTitle,
             textAlign: TextAlign.center,
-            maxLines: 3,
-            textScaler: const TextScaler.linear(.9),
             style: TextStyles.semiBold13.copyWith(
               color: AppColors.grayscale500,
             ),

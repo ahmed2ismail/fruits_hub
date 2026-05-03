@@ -33,22 +33,17 @@ class SocialLoginButton extends StatelessWidget {
             ),
             elevation: 0,
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SvgPicture.asset(iconPath, height: 24, width: 24),
-              const SizedBox(width: 12), // مسافة فاصلة بين الأيقونة والنص
-              Text(
-                text,
-                textAlign: TextAlign.center,
-                style: TextStyles.semiBold16.copyWith(
-                  color: AppColors.grayscale950, // لون مقارب للأسود
-                  height: 1.40,
-                ),
+          child: ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: SvgPicture.asset(iconPath, height: 24, width: 24),
+            title: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyles.semiBold16.copyWith(
+                color: AppColors.grayscale950, // لون مقارب للأسود
+                height: 1.40,
               ),
-            ],
+            ),
           ),
         ),
       ),

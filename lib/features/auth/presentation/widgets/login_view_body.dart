@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_constants.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/custom_check_have_account_text_span.dart';
 import 'package:fruits_hub/core/widgets/custom_default_app_button.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/custom_forget_password_text_button.dart';
@@ -15,6 +16,8 @@ class LoginViewBody extends StatelessWidget {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.only(
+        left: AppConstants.kHorizontalPadding16,
+        right: AppConstants.kHorizontalPadding16,
         // عشان لما يطلع الكيبورد مايحصلش overflow لل height يعني الشاشة متغيرش نفسها
         // viewInsets.bottom بترجع المساحة اللي اتاخدت من الشاشة بسبب الكيبورد
         bottom: MediaQuery.of(context).viewInsets.bottom,

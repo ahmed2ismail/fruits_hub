@@ -10,22 +10,17 @@ class CustomDefaultAppButton extends StatelessWidget {
   final String? text;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextButton(
-        onPressed: onPressed,
-        style: TextButton.styleFrom(
-          backgroundColor: AppColors.green1_500,
-          minimumSize: const Size(double.infinity, 54),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-        ),
-        child: Text(
-          text ?? S.of(context).loginButtonText,
-          textAlign: TextAlign.center,
-          style: TextStyles.bold16.copyWith(color: Colors.white),
-        ),
+    return TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        backgroundColor: AppColors.green1_500,
+        minimumSize: const Size(double.infinity, 54),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+      child: Text(
+        text ?? S.of(context).loginButtonText,
+        textAlign: TextAlign.center,
+        style: TextStyles.bold16.copyWith(color: Colors.white),
       ),
     );
   }

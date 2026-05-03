@@ -17,32 +17,29 @@ class SocialLoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 17.5),
-      child: SizedBox(
-        width: double.infinity,
-        height: 56,
-        child: OutlinedButton(
-          onPressed: onPressed,
-          style: OutlinedButton.styleFrom(
-            backgroundColor: Colors.white,
-            // تحديد لون وسمك الإطار الخارجي
-            side: const BorderSide(color: AppColors.whiteShift, width: 1),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            elevation: 0,
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.white,
+          // تحديد لون وسمك الإطار الخارجي
+          side: const BorderSide(color: AppColors.whiteShift, width: 1),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
           ),
-          child: ListTile(
-            contentPadding: EdgeInsets.zero,
-            leading: SvgPicture.asset(iconPath, height: 24, width: 24),
-            title: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: TextStyles.semiBold16.copyWith(
-                color: AppColors.grayscale950, // لون مقارب للأسود
-                height: 1.40,
-              ),
+          elevation: 0,
+        ),
+        child: ListTile(
+          contentPadding: EdgeInsets.zero,
+          leading: SvgPicture.asset(iconPath, height: 24, width: 24),
+          title: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: TextStyles.semiBold16.copyWith(
+              color: AppColors.grayscale950, // لون مقارب للأسود
+              height: 1.40,
             ),
           ),
         ),

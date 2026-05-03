@@ -24,6 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "dontHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailTextFieldLabel": MessageLookupByLibrary.simpleMessage("Email"),
+        "forgotPasswordText":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginButtonText": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginWithAppleText":
+            MessageLookupByLibrary.simpleMessage("Login with Apple"),
+        "loginWithFacebookText":
+            MessageLookupByLibrary.simpleMessage("Login with Facebook"),
+        "loginWithGoogleText":
+            MessageLookupByLibrary.simpleMessage("Login with Google"),
         "onBoardingFreshFruitsPrefix":
             MessageLookupByLibrary.simpleMessage("Search and Shopping"),
         "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
@@ -32,6 +45,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "We offer you the best selected fruits. Check out the details, images, and reviews to ensure you choose the perfect fruit."),
         "onBoardingWelcomePrefix":
             MessageLookupByLibrary.simpleMessage("Welcome to "),
+        "orText": MessageLookupByLibrary.simpleMessage("Or"),
+        "passwordTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("Password"),
+        "registerText":
+            MessageLookupByLibrary.simpleMessage("Create an account"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip")
       };
 }

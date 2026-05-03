@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/widgets/custom_app_bar.dart';
+import 'package:fruits_hub/features/auth/presentation/widgets/login_view_body.dart';
+import 'package:fruits_hub/generated/l10n.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -7,10 +10,10 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: SafeArea(child: const Text('Login View'),)
+      resizeToAvoidBottomInset:
+          false, // عشان لما يطلع الكيبورد مايحصلش overflow لل height يعني الشاشة متغيرش نفسها
+      appBar: CustomAppBar(title: S.of(context).loginAppBarTitle),
+      body: SafeArea(child: LoginViewBody()),
     );
   }
 }

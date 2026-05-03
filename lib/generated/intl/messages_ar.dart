@@ -24,6 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+        "dontHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟ "),
+        "emailTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "forgotPasswordText":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "loginButtonText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "loginWithAppleText":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
+        "loginWithFacebookText":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
+        "loginWithGoogleText":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "onBoardingFreshFruitsPrefix":
             MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
         "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
@@ -32,6 +46,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية"),
         "onBoardingWelcomePrefix":
             MessageLookupByLibrary.simpleMessage("مرحبًا بك في "),
+        "orText": MessageLookupByLibrary.simpleMessage("أو"),
+        "passwordTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخط")
       };
 }

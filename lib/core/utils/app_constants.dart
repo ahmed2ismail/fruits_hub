@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 abstract class AppConstants {
   static const String kAppName = 'Fruits Hub';
   static const String kFontFamily = 'Cairo';

@@ -6,6 +6,10 @@ abstract class AppColors {
   static const Color lightPrimaryColor = Color(0xFF2D9F5D);
   static const Color secondaryColor = Color(0xFFF4A91F);
   static const Color lightSecondaryColor = Color(0xFFF8C76D);
+  static const Color backgroundWhiteColor = Color(0xFFFFFFFF);
+  static const Color whiteOp = Color(0xFFF9FAFA);
+  static const Color whiteSoft = Color(0xFFE6E9E9);
+  static const Color whiteShift = Color(0xFFDCDEDE);
 
   // --- Grayscale (تدرجات الرمادي) ---
   static const Color grayscale500 = Color(0xFF4E5556);
@@ -13,12 +17,14 @@ abstract class AppColors {
   static const Color grayscale950 = Color(0xFF0C0D0D);
   static const Color grayscale100 = Color(0xFFE6E8E7);
   static const Color grayscale200 = Color(0xFFCACECE);
+  static const Color grayscale250 = Color(0xFFC9CECF);
   static const Color grayscale300 = Color(0xFFAFB5B6);
   static const Color grayscale400 = Color(0xFF949D9E);
   static const Color grayscale600 = Color(0xFF616A6B);
   static const Color grayscale700 = Color(0xFF494F50);
   static const Color grayscale800 = Color(0xFF313535);
   static const Color grayscale900 = Color(0xFF181A1B);
+  static const Color graylight = Color(0xFFE0E0E0);
 
   // --- Green (تدرجات الأخضر الأساسية) ---
   static const Color green500 = Color(0xFF5DC24E);

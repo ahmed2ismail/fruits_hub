@@ -23,5 +23,49 @@
     "OnBoardingWelcomePrefixButton": "Get Started",
     "@OnBoardingWelcomePrefixButton": {
         "description": "Text for the welcome button on the onboarding screen"
+    },
+    "loginAppBarTitle": "Login",
+    "@loginAppBarTitle": {
+        "description": "Title for the app bar on the login screen"
+    },
+    "emailTextFieldLabel": "Email",
+    "@emailTextFieldLabel": {
+        "description": "Label for the email text field on the login screen"
+    },
+    "passwordTextFieldLabel": "Password",
+    "@passwordTextFieldLabel": {
+        "description": "Label for the password text field on the login screen"
+    },
+    "forgotPasswordText": "Forgot Password?",
+    "@forgotPasswordText": {
+        "description": "Text for the forgot password option on the login screen"
+    },
+    "loginButtonText": "Login",
+    "@loginButtonText": {
+        "description": "Text for the login button on the login screen"
+    },
+    "dontHaveAccountText": "Don't have an account?",
+    "@dontHaveAccountText": {
+        "description": "Text for the don't have account option on the login screen"
+    },
+    "registerText": "Create an account",
+    "@registerText": {
+        "description": "Text for the register option on the login screen"
+    },
+    "orText": "Or",
+    "@orText": {
+        "description": "Text for the 'or' separator on the login screen"
+    },
+    "loginWithGoogleText": "Login with Google",
+    "@loginWithGoogleText": {
+        "description": "Text for the login with Google option on the login screen"
+    },
+    "loginWithFacebookText": "Login with Facebook",
+    "@loginWithFacebookText": {
+        "description": "Text for the login with Facebook option on the login screen"
+    },
+    "loginWithAppleText": "Login with Apple",
+    "@loginWithAppleText": {
+        "description": "Text for the login with Apple option on the login screen"
     }
 }

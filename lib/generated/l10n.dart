@@ -109,6 +109,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Login`
+  String get loginAppBarTitle {
+    return Intl.message(
+      'Login',
+      name: 'loginAppBarTitle',
+      desc: 'Title for the app bar on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get emailTextFieldLabel {
+    return Intl.message(
+      'Email',
+      name: 'emailTextFieldLabel',
+      desc: 'Label for the email text field on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get passwordTextFieldLabel {
+    return Intl.message(
+      'Password',
+      name: 'passwordTextFieldLabel',
+      desc: 'Label for the password text field on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgotPasswordText {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPasswordText',
+      desc: 'Text for the forgot password option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get loginButtonText {
+    return Intl.message(
+      'Login',
+      name: 'loginButtonText',
+      desc: 'Text for the login button on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccountText {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccountText',
+      desc: 'Text for the don\'t have account option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Create an account`
+  String get registerText {
+    return Intl.message(
+      'Create an account',
+      name: 'registerText',
+      desc: 'Text for the register option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get orText {
+    return Intl.message(
+      'Or',
+      name: 'orText',
+      desc: 'Text for the \'or\' separator on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Login with Google`
+  String get loginWithGoogleText {
+    return Intl.message(
+      'Login with Google',
+      name: 'loginWithGoogleText',
+      desc: 'Text for the login with Google option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Login with Facebook`
+  String get loginWithFacebookText {
+    return Intl.message(
+      'Login with Facebook',
+      name: 'loginWithFacebookText',
+      desc: 'Text for the login with Facebook option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Login with Apple`
+  String get loginWithAppleText {
+    return Intl.message(
+      'Login with Apple',
+      name: 'loginWithAppleText',
+      desc: 'Text for the login with Apple option on the login screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

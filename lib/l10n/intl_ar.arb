@@ -5,5 +5,16 @@
     "onBoardingSubtitle1": "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
     "onBoardingFreshFruitsPrefix": "ابحث وتسوق",
     "onBoardingSubtitle2": "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
-    "OnBoardingWelcomePrefixButton": "ابدأ الان"
+    "OnBoardingWelcomePrefixButton": "ابدأ الان",
+    "loginAppBarTitle": "تسجيل دخول",
+    "emailTextFieldLabel": "البريد الإلكتروني",
+    "passwordTextFieldLabel": "كلمة المرور",
+    "forgotPasswordText": "نسيت كلمة المرور؟",
+    "loginButtonText": "تسجيل دخول",
+    "dontHaveAccountText": "لا تمتلك حساب؟ ",
+    "registerText": "قم بإنشاء حساب",
+    "orText": "أو",
+    "loginWithGoogleText": "تسجيل بواسطة جوجل",
+    "loginWithFacebookText": "تسجيل بواسطة فيسبوك",
+    "loginWithAppleText": "تسجيل بواسطة أبل"
 }

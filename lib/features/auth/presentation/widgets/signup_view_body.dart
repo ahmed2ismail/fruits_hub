@@ -15,50 +15,26 @@ class SignupViewBody extends StatefulWidget {
 }
 
 class _SignupViewBodyState extends State<SignupViewBody> {
-  late final TextEditingController _fullNameController;
-  late final TextEditingController _emailController;
-  late final TextEditingController _passwordController;
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool _isTermsAccepted = false;
-  bool _isButtonEnabled = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _fullNameController = TextEditingController();
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-
-    _fullNameController.addListener(_validateFields);
-    _emailController.addListener(_validateFields);
-    _passwordController.addListener(_validateFields);
-  }
 
   @override
   void dispose() {
-    _fullNameController.removeListener(_validateFields);
-    _emailController.removeListener(_validateFields);
-    _passwordController.removeListener(_validateFields);
     _fullNameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
 
-  void _validateFields() {
+  @override
+  Widget build(BuildContext context) {
     final isButtonEnabled =
         _fullNameController.text.isNotEmpty &&
         _emailController.text.isNotEmpty &&
         _passwordController.text.isNotEmpty &&
         _isTermsAccepted;
-    if (isButtonEnabled != _isButtonEnabled) {
-      setState(() {
-        _isButtonEnabled = isButtonEnabled;
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.only(
@@ -68,54 +44,62 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         // viewInsets.bottom بترجع المساحة اللي اتاخدت من الشاشة بسبب الكيبورد
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
-      child: Column(
-        children: [
-          const SizedBox(height: 24),
-          CustomTextFormField(
-            controller: _fullNameController,
-            labelText: S.of(context).FullName,
-            keyboardType: TextInputType.name,
-          ),
-          const SizedBox(height: 16),
-          CustomTextFormField(
-            controller: _emailController,
-            labelText: S.of(context).emailTextFieldLabel,
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const SizedBox(height: 16),
-          CustomTextFormField(
-            controller: _passwordController,
-            labelText: S.of(context).passwordTextFieldLabel,
-            keyboardType: TextInputType.visiblePassword,
-            isPassword: true,
-          ),
-          const SizedBox(height: 16),
-          TermsAndConditionsWidget(
-            onStateChanged: (isAccepted) {
-              _isTermsAccepted = isAccepted;
-              _validateFields();
-            },
-          ),
-          const SizedBox(height: 30),
-          CustomDefaultAppButton(
-            text: S.of(context).createNewAccount,
-            onPressed: _isButtonEnabled
-                ? () {
-                    // TODO: navigate to home view
-                    // Navigator.pushNamed(context, HomeView.routeName);
-                  }
-                : null,
-          ),
-          const SizedBox(height: 26),
-          CustomCheckHaveAccountTextSpan(
-            mainText: S.of(context).alreadyHaveAccountText,
-            subText: S.of(context).loginText,
-            subTextOnTap: () {
-              Navigator.pushReplacementNamed(context, LoginView.routeName);
-            },
-          ),
-          // const SizedBox(height: 33),
-        ],
+      child: Form(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        child: Column(
+          children: [
+            const SizedBox(height: 24),
+            CustomTextFormField(
+              controller: _fullNameController,
+              labelText: S.of(context).FullName,
+              keyboardType: TextInputType.name,
+              onChanged: (value) => setState(() {}),
+            ),
+            const SizedBox(height: 16),
+            CustomTextFormField(
+              controller: _emailController,
+              labelText: S.of(context).emailTextFieldLabel,
+              keyboardType: TextInputType.emailAddress,
+              onChanged: (value) => setState(() {}),
+            ),
+            const SizedBox(height: 16),
+            CustomTextFormField(
+              controller: _passwordController,
+              labelText: S.of(context).passwordTextFieldLabel,
+              keyboardType: TextInputType.visiblePassword,
+              isPassword: true,
+              onChanged: (value) => setState(() {}),
+            ),
+            const SizedBox(height: 16),
+            TermsAndConditionsWidget(
+              onStateChanged: (isAccepted) {
+                // عند تغيير حالة الشروط، نقوم بتحديث الحالة وإعادة بناء الواجهة
+                setState(() {
+                  _isTermsAccepted = isAccepted;
+                });
+              },
+            ),
+            const SizedBox(height: 30),
+            CustomDefaultAppButton(
+              text: S.of(context).createNewAccount,
+              onPressed: isButtonEnabled
+                  ? () {
+                      // TODO: navigate to home view
+                      // Navigator.pushNamed(context, HomeView.routeName);
+                    }
+                  : null,
+            ),
+            const SizedBox(height: 26),
+            CustomCheckHaveAccountTextSpan(
+              mainText: S.of(context).alreadyHaveAccountText,
+              subText: S.of(context).loginText,
+              subTextOnTap: () {
+                Navigator.pushReplacementNamed(context, LoginView.routeName);
+              },
+            ),
+            // const SizedBox(height: 33),
+          ],
+        ),
       ),
     );
   }

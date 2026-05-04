@@ -17,41 +17,22 @@ class LoginViewBody extends StatefulWidget {
 }
 
 class _LoginViewBodyState extends State<LoginViewBody> {
-  late final TextEditingController _emailController;
-  late final TextEditingController _passwordController;
-  bool _isButtonEnabled = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-
-    _emailController.addListener(_validateFields);
-    _passwordController.addListener(_validateFields);
-  }
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
-    _emailController.removeListener(_validateFields);
-    _passwordController.removeListener(_validateFields);
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
 
-  void _validateFields() {
-    final isButtonEnabled =
-        _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
-    if (isButtonEnabled != _isButtonEnabled) {
-      setState(() {
-        _isButtonEnabled = isButtonEnabled;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    // يتم حساب هذه القيمة مع كل إعادة بناء للويدجت
+    final isButtonEnabled =
+        _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
+
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.only(
@@ -61,52 +42,59 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         // viewInsets.bottom بترجع المساحة اللي اتاخدت من الشاشة بسبب الكيبورد
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
-      child: Column(
-        children: [
-          const SizedBox(height: 24),
-          CustomTextFormField(
-            controller: _emailController,
-            labelText: S.of(context).emailTextFieldLabel,
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const SizedBox(height: 16),
-          CustomTextFormField(
-            controller: _passwordController,
-            labelText: S.of(context).passwordTextFieldLabel,
-            keyboardType: TextInputType.visiblePassword,
-            isPassword: true,
-          ),
-          const SizedBox(height: 16),
-          CustomForgetPasswordTextButton(
-            onPressed: () {
-              // TODO: navigate to forget password view
-              // Navigator.pushNamed(context, ForgetPasswordView.routeName);
-            },
-          ),
-          const SizedBox(height: 33),
-          CustomDefaultAppButton(
-            onPressed: _isButtonEnabled
-                ? () {
-                    // TODO: navigate to home view
-                    // Navigator.pushNamed(context, HomeView.routeName);
-                  }
-                : null,
-          ),
-          const SizedBox(height: 33),
-          CustomCheckHaveAccountTextSpan(
-            mainText: S.of(context).dontHaveAccountText,
-            subText: S.of(context).registerText,
-            subTextOnTap: () {
-              Navigator.pushReplacementNamed(context, SignupView.routeName);
-            },
-          ),
-          const SizedBox(height: 33),
-          const CustomOrDivider(),
-          const SizedBox(height: 16),
+      child: Form(
+        // هذا السطر يجعل الـ Form يعيد بناء نفسه مع كل تغيير من المستخدم
+        // مما يسمح لنا بتحديث حالة الزر بشكل تفاعلي
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        child: Column(
+          children: [
+            const SizedBox(height: 24),
+            CustomTextFormField(
+              controller: _emailController,
+              labelText: S.of(context).emailTextFieldLabel,
+              keyboardType: TextInputType.emailAddress,
+              onChanged: (value) => setState(() {}),
+            ),
+            const SizedBox(height: 16),
+            CustomTextFormField(
+              controller: _passwordController,
+              labelText: S.of(context).passwordTextFieldLabel,
+              keyboardType: TextInputType.visiblePassword,
+              isPassword: true,
+              onChanged: (value) => setState(() {}),
+            ),
+            const SizedBox(height: 16),
+            CustomForgetPasswordTextButton(
+              onPressed: () {
+                // TODO: navigate to forget password view
+                // Navigator.pushNamed(context, ForgetPasswordView.routeName);
+              },
+            ),
+            const SizedBox(height: 33),
+            CustomDefaultAppButton(
+              onPressed: isButtonEnabled
+                  ? () {
+                      // TODO: navigate to home view
+                      // Navigator.pushNamed(context, HomeView.routeName);
+                    }
+                  : null,
+            ),
+            const SizedBox(height: 33),
+            CustomCheckHaveAccountTextSpan(
+              mainText: S.of(context).dontHaveAccountText,
+              subText: S.of(context).registerText,
+              subTextOnTap: () {
+                Navigator.pushReplacementNamed(context, SignupView.routeName);
+              },
+            ),
+            const SizedBox(height: 33),
+            const CustomOrDivider(),
+            const SizedBox(height: 16),
 
-          // تم استخراج أزرار السوشيال ميديا في ويدجت منفصلة لتنظيف الكود
-          const SocialLoginSection(),
-        ],
+            // تم استخراج أزرار السوشيال ميديا في ويدجت منفصلة لتنظيف الكود
+            const SocialLoginSection(),
+          ],
+        ),
       ),
     );
   }

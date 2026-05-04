@@ -12,11 +12,13 @@ class CustomTextFormField extends StatefulWidget {
     required this.labelText,
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
+    this.controller,
   });
 
   final String labelText;
   final TextInputType keyboardType;
   final bool isPassword;
+  final TextEditingController? controller;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -34,6 +36,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       textAlign: TextAlign.right, // لضبط النص ليكون من اليمين
       textDirection: TextDirection.rtl, // لدعم اللغة العربية بشكل سليم
       keyboardType: widget.keyboardType,

@@ -170,10 +170,10 @@ class S {
     );
   }
 
-  /// `Create an account`
+  /// ` Create an account`
   String get registerText {
     return Intl.message(
-      'Create an account',
+      ' Create an account',
       name: 'registerText',
       desc: 'Text for the register option on the login screen',
       args: [],
@@ -216,6 +216,78 @@ class S {
       'Login with Apple',
       name: 'loginWithAppleText',
       desc: 'Text for the login with Apple option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `New Account`
+  String get newAccount {
+    return Intl.message(
+      'New Account',
+      name: 'newAccount',
+      desc: 'Text for the new account option on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get FullName {
+    return Intl.message(
+      'Full Name',
+      name: 'FullName',
+      desc: 'Label for the full name text field on the login screen',
+      args: [],
+    );
+  }
+
+  /// `By creating an account, you agree to our `
+  String get byCreatingAnAccountYouAgree {
+    return Intl.message(
+      'By creating an account, you agree to our ',
+      name: 'byCreatingAnAccountYouAgree',
+      desc:
+          'Text for the \'by creating an account\' section on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Terms and Conditions`
+  String get toOurTermsAndConditions {
+    return Intl.message(
+      'Terms and Conditions',
+      name: 'toOurTermsAndConditions',
+      desc: 'Text for the \'Terms and Conditions\' link on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Create New Account`
+  String get createNewAccount {
+    return Intl.message(
+      'Create New Account',
+      name: 'createNewAccount',
+      desc: 'Text for the \'Create New Account\' button on the login screen',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAccountText {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAccountText',
+      desc:
+          'Text for the \'Already have an account?\' option on the login screen',
+      args: [],
+    );
+  }
+
+  /// ` Login`
+  String get loginText {
+    return Intl.message(
+      ' Login',
+      name: 'loginText',
+      desc: 'Text for the \'Login\' button on the login screen',
       args: [],
     );
   }

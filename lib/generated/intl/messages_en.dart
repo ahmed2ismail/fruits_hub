@@ -22,8 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "alreadyHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "byCreatingAnAccountYouAgree": MessageLookupByLibrary.simpleMessage(
+            "By creating an account, you agree to our "),
+        "createNewAccount":
+            MessageLookupByLibrary.simpleMessage("Create New Account"),
         "dontHaveAccountText":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "emailTextFieldLabel": MessageLookupByLibrary.simpleMessage("Email"),
@@ -31,12 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("Login"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginText": MessageLookupByLibrary.simpleMessage(" Login"),
         "loginWithAppleText":
             MessageLookupByLibrary.simpleMessage("Login with Apple"),
         "loginWithFacebookText":
             MessageLookupByLibrary.simpleMessage("Login with Facebook"),
         "loginWithGoogleText":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
+        "newAccount": MessageLookupByLibrary.simpleMessage("New Account"),
         "onBoardingFreshFruitsPrefix":
             MessageLookupByLibrary.simpleMessage("Search and Shopping"),
         "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
@@ -49,7 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("Password"),
         "registerText":
-            MessageLookupByLibrary.simpleMessage("Create an account"),
-        "skipButton": MessageLookupByLibrary.simpleMessage("Skip")
+            MessageLookupByLibrary.simpleMessage(" Create an account"),
+        "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+        "toOurTermsAndConditions":
+            MessageLookupByLibrary.simpleMessage("Terms and Conditions")
       };
 }

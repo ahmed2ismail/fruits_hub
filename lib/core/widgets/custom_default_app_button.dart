@@ -13,14 +13,20 @@ class CustomDefaultAppButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        backgroundColor: AppColors.green1_500,
+        backgroundColor: onPressed != null
+            ? AppColors.green1_500
+            : AppColors.grayscale200,
         minimumSize: const Size(double.infinity, 54),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
       child: Text(
         text ?? S.of(context).loginButtonText,
         textAlign: TextAlign.center,
-        style: TextStyles.bold16.copyWith(color: Colors.white),
+        style: TextStyles.bold16.copyWith(
+          color: onPressed != null
+              ? AppColors.backgroundWhiteColor
+              : AppColors.grayscale400,
+        ),
       ),
     );
   }

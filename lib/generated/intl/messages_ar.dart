@@ -22,8 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+        "alreadyHaveAccountText":
+            MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟ "),
+        "byCreatingAnAccountYouAgree": MessageLookupByLibrary.simpleMessage(
+            "من خلال إنشاء حساب ، فإنك توافق على "),
+        "createNewAccount":
+            MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "dontHaveAccountText":
             MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟ "),
         "emailTextFieldLabel":
@@ -32,12 +39,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "loginText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginWithAppleText":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
         "loginWithFacebookText":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
         "loginWithGoogleText":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "newAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "onBoardingFreshFruitsPrefix":
             MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
         "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
@@ -50,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
-        "skipButton": MessageLookupByLibrary.simpleMessage("تخط")
+        "skipButton": MessageLookupByLibrary.simpleMessage("تخط"),
+        "toOurTermsAndConditions":
+            MessageLookupByLibrary.simpleMessage("الشروط والأحكام الخاصة بنا")
       };
 }

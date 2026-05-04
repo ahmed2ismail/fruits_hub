@@ -48,7 +48,7 @@
     "@dontHaveAccountText": {
         "description": "Text for the don't have account option on the login screen"
     },
-    "registerText": "Create an account",
+    "registerText": " Create an account",
     "@registerText": {
         "description": "Text for the register option on the login screen"
     },
@@ -67,5 +67,33 @@
     "loginWithAppleText": "Login with Apple",
     "@loginWithAppleText": {
         "description": "Text for the login with Apple option on the login screen"
+    },
+    "newAccount": "New Account",
+    "@newAccount": {
+        "description": "Text for the new account option on the login screen"
+    },
+    "FullName": "Full Name",
+    "@FullName": {
+        "description": "Label for the full name text field on the login screen"
+    },
+    "byCreatingAnAccountYouAgree": "By creating an account, you agree to our ",
+    "@byCreatingAnAccountYouAgree": {
+        "description": "Text for the 'by creating an account' section on the login screen"
+    },
+    "toOurTermsAndConditions": "Terms and Conditions",
+    "@toOurTermsAndConditions": {
+        "description": "Text for the 'Terms and Conditions' link on the login screen"
+    },
+    "createNewAccount": "Create New Account",
+    "@createNewAccount": {
+        "description": "Text for the 'Create New Account' button on the login screen"
+    },
+    "alreadyHaveAccountText": "Already have an account?",
+    "@alreadyHaveAccountText": {
+        "description": "Text for the 'Already have an account?' option on the login screen"
+    },
+    "loginText": " Login",
+    "@loginText": {
+        "description": "Text for the 'Login' button on the login screen"
     }
 }

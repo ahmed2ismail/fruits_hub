@@ -8,12 +8,14 @@ class CustomCheckHaveAccountTextSpan extends StatelessWidget {
     super.key,
     required this.mainText,
     required this.subText,
-    required this.subTextOnTap,
+    this.subTextOnTap,
+    this.textAlign = TextAlign.center,
   });
 
   final String mainText;
   final String subText;
   final VoidCallback? subTextOnTap;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class CustomCheckHaveAccountTextSpan extends StatelessWidget {
           ),
         ],
       ),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
     );
   }
 }

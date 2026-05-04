@@ -16,5 +16,12 @@
     "orText": "أو",
     "loginWithGoogleText": "تسجيل بواسطة جوجل",
     "loginWithFacebookText": "تسجيل بواسطة فيسبوك",
-    "loginWithAppleText": "تسجيل بواسطة أبل"
+    "loginWithAppleText": "تسجيل بواسطة أبل",
+    "newAccount": "حساب جديد",
+    "FullName": "الاسم كامل",
+    "byCreatingAnAccountYouAgree": "من خلال إنشاء حساب ، فإنك توافق على ",
+    "toOurTermsAndConditions": "الشروط والأحكام الخاصة بنا",
+    "createNewAccount": "إنشاء حساب جديد",
+    "alreadyHaveAccountText": "تمتلك حساب بالفعل؟ ",
+    "loginText": "تسجيل دخول"
 }

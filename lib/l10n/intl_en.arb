@@ -95,5 +95,61 @@
     "loginText": " Login",
     "@loginText": {
         "description": "Text for the 'Login' button on the login screen"
+    },
+    "ForgotPasswordAppBarTitle": "Forgot Password",
+    "@ForgotPasswordAppBarTitle": {
+        "description": "Title for the app bar on the forgot password screen"
+    },
+    "ForgotPasswordHelperMessage": "Don't worry, just enter your phone number and we'll send you a verification code.",
+    "@ForgotPasswordHelperMessage": {
+        "description": "Helper message for the forgot password screen"
+    },
+    "phoneNumberWithCountryCode": "Phone number with country code",
+    "@phoneNumberWithCountryCode": {
+        "description": "Label for the phone number text field on the forgot password screen"
+    },
+    "IForgotMyPassword": "I Forgot My Password",
+    "@IForgotMyPassword": {
+        "description": "Text for the 'I Forgot My Password' option on the forgot password screen"
+    },
+    "CodeVerificationAppBarTitle": "Code Verification",
+    "@CodeVerificationAppBarTitle": {
+        "description": "Title for the app bar on the code verification screen"
+    },
+    "CodeVerificationHelperMessage": "Enter the code we sent to this email address",
+    "@CodeVerificationHelperMessage": {
+        "description": "Helper message for the code verification screen"
+    },
+    "CodeVerificationTextButton": "Verify Code",
+    "@CodeVerificationTextButton": {
+        "description": "Text for the 'Verify Code' button on the code verification screen"
+    },
+    "ResendCode": "Resend Code",
+    "@ResendCode": {
+        "description": "Text for the 'Resend Code' button on the code verification screen"
+    },
+    "ResetYourPasswordAppBarTitle": "Reset Your Password",
+    "@ResetYourPasswordAppBarTitle": {
+        "description": "Title for the app bar on the reset password screen"
+    },
+    "ResetYourPasswordHelperMessage": "Create a new password to log in",
+    "@ResetYourPasswordHelperMessage": {
+        "description": "Helper message for the reset password screen"
+    },
+    "NewPassword": "New Password",
+    "@NewPassword": {
+        "description": "Label for the new password text field on the reset password screen"
+    },
+    "ConfirmPassword": "Confirm Password",
+    "@ConfirmPassword": {
+        "description": "Label for the confirm password text field on the reset password screen"
+    },
+    "CreateNewPasswordTextButton": "Create New Password",
+    "@CreateNewPasswordTextButton": {
+        "description": "Text for the 'Create New Password' button on the reset password screen"
+    },
+    "SuccefulChangedPasswordMessage": "Password changed successfully",
+    "@SuccefulChangedPasswordMessage": {
+        "description": "Message for a successful password change"
     }
 }

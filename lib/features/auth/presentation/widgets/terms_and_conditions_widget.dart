@@ -70,6 +70,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
             textAlign: TextAlign.start,
             mainText: S.of(context).byCreatingAnAccountYouAgree,
             subText: S.of(context).toOurTermsAndConditions,
+            subTextColor: AppColors.lightPrimaryColor,
             subTextOnTap: () {
               //TODO: مسار الانتقال لصفحة قراءة الشروط والأحكام
             },

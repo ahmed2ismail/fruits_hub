@@ -291,6 +291,153 @@ class S {
       args: [],
     );
   }
+
+  /// `Forgot Password`
+  String get ForgotPasswordAppBarTitle {
+    return Intl.message(
+      'Forgot Password',
+      name: 'ForgotPasswordAppBarTitle',
+      desc: 'Title for the app bar on the forgot password screen',
+      args: [],
+    );
+  }
+
+  /// `Don't worry, just enter your phone number and we'll send you a verification code.`
+  String get ForgotPasswordHelperMessage {
+    return Intl.message(
+      'Don\'t worry, just enter your phone number and we\'ll send you a verification code.',
+      name: 'ForgotPasswordHelperMessage',
+      desc: 'Helper message for the forgot password screen',
+      args: [],
+    );
+  }
+
+  /// `Phone number with country code`
+  String get phoneNumberWithCountryCode {
+    return Intl.message(
+      'Phone number with country code',
+      name: 'phoneNumberWithCountryCode',
+      desc:
+          'Label for the phone number text field on the forgot password screen',
+      args: [],
+    );
+  }
+
+  /// `I Forgot My Password`
+  String get IForgotMyPassword {
+    return Intl.message(
+      'I Forgot My Password',
+      name: 'IForgotMyPassword',
+      desc:
+          'Text for the \'I Forgot My Password\' option on the forgot password screen',
+      args: [],
+    );
+  }
+
+  /// `Code Verification`
+  String get CodeVerificationAppBarTitle {
+    return Intl.message(
+      'Code Verification',
+      name: 'CodeVerificationAppBarTitle',
+      desc: 'Title for the app bar on the code verification screen',
+      args: [],
+    );
+  }
+
+  /// `Enter the code we sent to this email address`
+  String get CodeVerificationHelperMessage {
+    return Intl.message(
+      'Enter the code we sent to this email address',
+      name: 'CodeVerificationHelperMessage',
+      desc: 'Helper message for the code verification screen',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get CodeVerificationTextButton {
+    return Intl.message(
+      'Verify Code',
+      name: 'CodeVerificationTextButton',
+      desc:
+          'Text for the \'Verify Code\' button on the code verification screen',
+      args: [],
+    );
+  }
+
+  /// `Resend Code`
+  String get ResendCode {
+    return Intl.message(
+      'Resend Code',
+      name: 'ResendCode',
+      desc:
+          'Text for the \'Resend Code\' button on the code verification screen',
+      args: [],
+    );
+  }
+
+  /// `Reset Your Password`
+  String get ResetYourPasswordAppBarTitle {
+    return Intl.message(
+      'Reset Your Password',
+      name: 'ResetYourPasswordAppBarTitle',
+      desc: 'Title for the app bar on the reset password screen',
+      args: [],
+    );
+  }
+
+  /// `Create a new password to log in`
+  String get ResetYourPasswordHelperMessage {
+    return Intl.message(
+      'Create a new password to log in',
+      name: 'ResetYourPasswordHelperMessage',
+      desc: 'Helper message for the reset password screen',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get NewPassword {
+    return Intl.message(
+      'New Password',
+      name: 'NewPassword',
+      desc:
+          'Label for the new password text field on the reset password screen',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get ConfirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'ConfirmPassword',
+      desc:
+          'Label for the confirm password text field on the reset password screen',
+      args: [],
+    );
+  }
+
+  /// `Create New Password`
+  String get CreateNewPasswordTextButton {
+    return Intl.message(
+      'Create New Password',
+      name: 'CreateNewPasswordTextButton',
+      desc:
+          'Text for the \'Create New Password\' button on the reset password screen',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get SuccefulChangedPasswordMessage {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'SuccefulChangedPasswordMessage',
+      desc: 'Message for a successful password change',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

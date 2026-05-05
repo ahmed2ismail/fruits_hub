@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/features/auth/presentation/view/forgot_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/view/password_recovery_view.dart';
+import 'package:fruits_hub/features/auth/presentation/view/reset_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/signup_view.dart';
 import 'package:fruits_hub/features/onBoarding/presentation/view/on_boarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/view/splash_view.dart';
@@ -25,6 +28,15 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
 
     case SignupView.routeName:
       return MaterialPageRoute(builder: (context) => const SignupView());
+
+    case ForgotPasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => const ForgotPasswordView());
+
+    case PasswordRecoveryView.routeName:
+      return MaterialPageRoute(builder: (context) => const PasswordRecoveryView());
+
+    case ResetPasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => const ResetPasswordView());
 
     default:
       return MaterialPageRoute(builder: (context) => const SplashView());

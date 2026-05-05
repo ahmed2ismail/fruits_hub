@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
+import 'package:fruits_hub/features/auth/presentation/view/forgot_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/signup_view.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/custom_check_have_account_text_span.dart';
 import 'package:fruits_hub/core/widgets/custom_default_app_button.dart';
@@ -64,10 +65,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               onChanged: (value) => setState(() {}),
             ),
             const SizedBox(height: 16),
-            CustomForgetPasswordTextButton(
+            CustomForgetPasswordAndRecoveryTextButton(
               onPressed: () {
-                // TODO: navigate to forget password view
-                // Navigator.pushNamed(context, ForgetPasswordView.routeName);
+                Navigator.pushNamed(context, ForgotPasswordView.routeName);
               },
             ),
             const SizedBox(height: 33),

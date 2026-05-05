@@ -23,5 +23,19 @@
     "toOurTermsAndConditions": "الشروط والأحكام الخاصة بنا",
     "createNewAccount": "إنشاء حساب جديد",
     "alreadyHaveAccountText": "تمتلك حساب بالفعل؟ ",
-    "loginText": "تسجيل دخول"
+    "loginText": "تسجيل دخول",
+    "ForgotPasswordAppBarTitle": "نسيان كلمة المرور",
+    "ForgotPasswordHelperMessage": "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
+    "phoneNumberWithCountryCode": "رقم الهاتف متبوعا برمز الدولة",
+    "IForgotMyPassword": "نسيت كلمة المرور",
+    "CodeVerificationAppBarTitle": "التحقق من الرمز",
+    "CodeVerificationHelperMessage": "أدخل الرمز الذي أرسلناه إلى عنوان بريدك التالي",
+    "CodeVerificationTextButton": "تحقق من الرمز",
+    "ResendCode": "إعادة إرسال الرمز",
+    "ResetYourPasswordAppBarTitle": "كلمة مرور جديدة",
+    "ResetYourPasswordHelperMessage": "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول",
+    "NewPassword": "كلمة مرور جديدة",
+    "ConfirmPassword": "تأكيد كلمة المرور",
+    "CreateNewPasswordTextButton": "إنشاء كلمة مرور جديدة",
+    "SuccefulChangedPasswordMessage": "تم تغيير كلمة المرور بنجاح"
 }

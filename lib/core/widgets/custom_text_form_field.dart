@@ -9,15 +9,17 @@ import 'package:svg_flutter/svg.dart';
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
-    required this.labelText,
+    this.labelText,
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
     this.controller,
     this.onChanged,
     this.validator,
+    this.hintText,
   });
 
-  final String labelText;
+  final String? labelText;
+  final String? hintText;
   final TextInputType keyboardType;
   final bool isPassword;
   final TextEditingController? controller;
@@ -39,12 +41,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    // نتحقق إذا كان الحقل مخصص لرقم هاتف أو إيميل لجعله من اليسار لليمين
+    final isPhoneOrEmail =
+        widget.keyboardType == TextInputType.phone ||
+        widget.keyboardType == TextInputType.emailAddress;
+
     return TextFormField(
       validator: widget.validator,
       onChanged: widget.onChanged,
       controller: widget.controller,
-      textAlign: TextAlign.right, // لضبط النص ليكون من اليمين
-      textDirection: TextDirection.rtl, // لدعم اللغة العربية بشكل سليم
+      textAlign: isPhoneOrEmail ? TextAlign.left : TextAlign.right,
+      textDirection: isPhoneOrEmail ? TextDirection.ltr : TextDirection.rtl,
       keyboardType: widget.keyboardType,
       obscureText: _isObscured,
       obscuringCharacter: '●',
@@ -59,20 +66,36 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   });
                 },
                 child: _isObscured
-                    ? SvgPicture.asset(
-                        AppAssets.eyeAuthPassword,
-                        fit: BoxFit.scaleDown,
+                    ? Padding(
+                        padding: const EdgeInsetsGeometry.directional(end: 32),
+                        child: SvgPicture.asset(
+                          AppAssets.eyeAuthPassword,
+                          fit: BoxFit.scaleDown,
+                          width: 24,
+                          height: 24,
+                        ),
                       )
-                    : const Icon(
-                        Icons.visibility_off,
-                        color: AppColors.grayscale250,
-                        size: 24,
+                    : Padding(
+                        padding: const EdgeInsetsGeometry.directional(end: 32),
+                        child: const Icon(
+                          Icons.visibility_off,
+                          color: AppColors.grayscale250,
+                          size: 24,
+                        ),
                       ),
               )
             : null,
+        hintText: widget.hintText,
+        hintStyle: widget.hintText != null
+            ? TextStyles.bold13.copyWith(color: AppColors.grayscale400)
+            : null,
+        hintTextDirection: isPhoneOrEmail
+            ? TextDirection.ltr
+            : TextDirection.rtl,
         labelText: widget.labelText,
-        labelStyle: TextStyles.bold13.copyWith(color: AppColors.grayscale400),
-        // لضبط الارتفاع ليكون تقريباً 56 كما في التصميم
+        labelStyle: widget.labelText != null
+            ? TextStyles.bold13.copyWith(color: AppColors.grayscale400)
+            : null,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 16,

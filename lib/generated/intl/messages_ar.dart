@@ -22,9 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "CodeVerificationAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
+        "CodeVerificationHelperMessage": MessageLookupByLibrary.simpleMessage(
+            "أدخل الرمز الذي أرسلناه إلى عنوان بريدك التالي"),
+        "CodeVerificationTextButton":
+            MessageLookupByLibrary.simpleMessage("تحقق من الرمز"),
+        "ConfirmPassword":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "CreateNewPasswordTextButton":
+            MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
+        "ForgotPasswordAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("نسيان كلمة المرور"),
+        "ForgotPasswordHelperMessage": MessageLookupByLibrary.simpleMessage(
+            "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق."),
         "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
+        "IForgotMyPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "NewPassword": MessageLookupByLibrary.simpleMessage("كلمة مرور جديدة"),
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+        "ResendCode": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+        "ResetYourPasswordAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("كلمة مرور جديدة"),
+        "ResetYourPasswordHelperMessage": MessageLookupByLibrary.simpleMessage(
+            "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول"),
+        "SuccefulChangedPasswordMessage":
+            MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "alreadyHaveAccountText":
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟ "),
         "byCreatingAnAccountYouAgree": MessageLookupByLibrary.simpleMessage(
@@ -58,6 +82,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "orText": MessageLookupByLibrary.simpleMessage("أو"),
         "passwordTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "phoneNumberWithCountryCode": MessageLookupByLibrary.simpleMessage(
+            "رقم الهاتف متبوعا برمز الدولة"),
         "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخط"),
         "toOurTermsAndConditions":

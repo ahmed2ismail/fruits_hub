@@ -10,12 +10,14 @@ class CustomCheckHaveAccountTextSpan extends StatelessWidget {
     required this.subText,
     this.subTextOnTap,
     this.textAlign = TextAlign.center,
+    this.subTextColor,
   });
 
   final String mainText;
   final String subText;
   final VoidCallback? subTextOnTap;
   final TextAlign textAlign;
+  final Color? subTextColor;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class CustomCheckHaveAccountTextSpan extends StatelessWidget {
             // السطر دا لجعل النص قابلاً للضغط
             recognizer: TapGestureRecognizer()..onTap = subTextOnTap,
             style: TextStyles.semiBold16.copyWith(
-              color: AppColors.green1_500,
+              color: subTextColor ?? AppColors.green1_500,
               height: 1.40,
             ),
           ),

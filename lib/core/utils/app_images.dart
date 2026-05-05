@@ -141,4 +141,5 @@ class AppAssets {
       "assets/images/watermelon_test.png";
 
   static const String eyeAuthPassword = "assets/images/Eye.svg";
+  static const String successCheckIcon = "assets/images/successCheckIcon.svg";
 }

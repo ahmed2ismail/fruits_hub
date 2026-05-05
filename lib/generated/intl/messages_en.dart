@@ -22,9 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "CodeVerificationAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("Code Verification"),
+        "CodeVerificationHelperMessage": MessageLookupByLibrary.simpleMessage(
+            "Enter the code we sent to this email address"),
+        "CodeVerificationTextButton":
+            MessageLookupByLibrary.simpleMessage("Verify Code"),
+        "ConfirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "CreateNewPasswordTextButton":
+            MessageLookupByLibrary.simpleMessage("Create New Password"),
+        "ForgotPasswordAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "ForgotPasswordHelperMessage": MessageLookupByLibrary.simpleMessage(
+            "Don\'t worry, just enter your phone number and we\'ll send you a verification code."),
         "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "IForgotMyPassword":
+            MessageLookupByLibrary.simpleMessage("I Forgot My Password"),
+        "NewPassword": MessageLookupByLibrary.simpleMessage("New Password"),
         "OnBoardingWelcomePrefixButton":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
+        "ResetYourPasswordAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("Reset Your Password"),
+        "ResetYourPasswordHelperMessage": MessageLookupByLibrary.simpleMessage(
+            "Create a new password to log in"),
+        "SuccefulChangedPasswordMessage": MessageLookupByLibrary.simpleMessage(
+            "Password changed successfully"),
         "alreadyHaveAccountText":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "byCreatingAnAccountYouAgree": MessageLookupByLibrary.simpleMessage(
@@ -57,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "orText": MessageLookupByLibrary.simpleMessage("Or"),
         "passwordTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("Password"),
+        "phoneNumberWithCountryCode": MessageLookupByLibrary.simpleMessage(
+            "Phone number with country code"),
         "registerText":
             MessageLookupByLibrary.simpleMessage(" Create an account"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),

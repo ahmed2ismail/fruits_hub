@@ -438,6 +438,16 @@ class S {
       args: [],
     );
   }
+
+  /// `An error occured. Please try again later.`
+  String get generalFailureMessage {
+    return Intl.message(
+      'An error occured. Please try again later.',
+      name: 'generalFailureMessage',
+      desc: 'Message for a general failure',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

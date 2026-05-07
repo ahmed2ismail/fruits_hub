@@ -60,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailTextFieldLabel": MessageLookupByLibrary.simpleMessage("Email"),
         "forgotPasswordText":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "generalFailureMessage": MessageLookupByLibrary.simpleMessage(
+            "An error occured. Please try again later."),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("Login"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("Login"),
         "loginText": MessageLookupByLibrary.simpleMessage(" Login"),

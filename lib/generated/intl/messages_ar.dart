@@ -61,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "forgotPasswordText":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "generalFailureMessage": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق."),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),

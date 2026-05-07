@@ -37,5 +37,6 @@
     "NewPassword": "كلمة مرور جديدة",
     "ConfirmPassword": "تأكيد كلمة المرور",
     "CreateNewPasswordTextButton": "إنشاء كلمة مرور جديدة",
-    "SuccefulChangedPasswordMessage": "تم تغيير كلمة المرور بنجاح"
+    "SuccefulChangedPasswordMessage": "تم تغيير كلمة المرور بنجاح",
+    "generalFailureMessage": "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق."
 }

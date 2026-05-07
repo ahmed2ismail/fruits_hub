@@ -2,6 +2,22 @@
 cmake_minimum_required(VERSION 3.14)
 project(fruits_hub LANGUAGES CXX)
 
+# Firebase C++ SDK.
+# Note: The Firebase C++ SDK is downloaded from the CDN and can be slow.
+# You can force a specific version by setting FIREBASE_CPP_SDK_VERSION.
+# e.g. set(FIREBASE_CPP_SDK_VERSION "11.8.0" CACHE STRING "")
+set(firebase_cpp_sdk_dir "${CMAKE_BINARY_DIR}/firebase_cpp_sdk")
+if(NOT EXISTS "${firebase_cpp_sdk_dir}")
+  message(STATUS "Downloading Firebase C++ SDK...")
+  # This is a mirror of the official Firebase C++ SDK.
+  # The official version is at: https://firebase.google.com/docs/cpp/setup
+  # The version is controlled by the file: flutter_fire_cli/firebase_cpp_sdk_version.json
+  file(DOWNLOAD "https://github.com/invertase/firebase-cpp-sdk/releases/download/v11.8.0/firebase_cpp_sdk_windows.zip"
+    "${CMAKE_BINARY_DIR}/firebase_cpp_sdk.zip"
+    TLS_VERIFY ON)
+  file(ARCHIVE_EXTRACT INPUT "${CMAKE_BINARY_DIR}/firebase_cpp_sdk.zip" DESTINATION "${CMAKE_BINARY_DIR}")
+  file(RENAME "${CMAKE_BINARY_DIR}/firebase_cpp_sdk-11.8.0" "${firebase_cpp_sdk_dir}")
+endif()
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
 set(BINARY_NAME "fruits_hub")

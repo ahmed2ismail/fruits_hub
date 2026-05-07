@@ -16,6 +16,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onChanged,
     this.validator,
     this.hintText,
+    this.onSaved,
   });
 
   final String? labelText;
@@ -25,6 +26,7 @@ class CustomTextFormField extends StatefulWidget {
   final TextEditingController? controller;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final void Function(String?)? onSaved;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -48,10 +50,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
     return TextFormField(
       validator: widget.validator,
+      onSaved: widget.onSaved,
       onChanged: widget.onChanged,
       controller: widget.controller,
-      textAlign: isPhoneOrEmail ? TextAlign.left : TextAlign.right,
-      textDirection: isPhoneOrEmail ? TextDirection.ltr : TextDirection.rtl,
+      textAlign: isPhoneOrEmail
+          ? TextAlign.left
+          : TextAlign.start, // Use TextAlign.start for natural alignment
+      textDirection: isPhoneOrEmail
+          ? TextDirection.ltr
+          : null, // Let Flutter decide for other fields
       keyboardType: widget.keyboardType,
       obscureText: _isObscured,
       obscuringCharacter: '●',
@@ -89,9 +96,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         hintStyle: widget.hintText != null
             ? TextStyles.bold13.copyWith(color: AppColors.grayscale400)
             : null,
-        hintTextDirection: isPhoneOrEmail
-            ? TextDirection.ltr
-            : TextDirection.rtl,
         labelText: widget.labelText,
         labelStyle: widget.labelText != null
             ? TextStyles.bold13.copyWith(color: AppColors.grayscale400)

@@ -151,5 +151,10 @@
     "SuccefulChangedPasswordMessage": "Password changed successfully",
     "@SuccefulChangedPasswordMessage": {
         "description": "Message for a successful password change"
+    },
+    "generalFailureMessage": "An error occured. Please try again later.",
+    "@generalFailureMessage": {
+        "description": "Message for a general failure"
     }
+    
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/di/injection_container.dart' as di;
 import 'package:fruits_hub/core/helper/functions/on_generate_routes.dart';
+import 'package:fruits_hub/core/helper/simple_bloc_observer.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/features/splash/presentation/view/splash_view.dart';
@@ -18,6 +20,7 @@ void main() async {
   );
   await Prefs.init();
   await di.init();
+  Bloc.observer = SimpleBlocObserver();
 
   runApp(const FruitHub());
 }

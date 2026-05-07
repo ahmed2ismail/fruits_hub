@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:fruits_hub/core/error/exceptions.dart';
 import 'package:fruits_hub/core/error/failures.dart';
+import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
 import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
@@ -27,7 +28,13 @@ class AuthRepoImpl implements AuthRepo {
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
-      return Left(ServerFailure('An error occured. Please try again later.'));
+      return Left(
+        ServerFailure(
+          isArabic()
+              ? "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق.\n رسالة الخطأ هي: $e"
+              : 'An error occured. Please try again later.\n error message is: $e',
+        ),
+      );
     }
   }
 

@@ -1,36 +1,53 @@
 import 'package:dartz/dartz.dart';
+import 'package:fruits_hub/core/error/exceptions.dart';
 import 'package:fruits_hub/core/error/failures.dart';
+import 'package:fruits_hub/core/services/firebase_auth_service.dart';
+import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repositories/auth_repo.dart';
 
 class AuthRepoImpl implements AuthRepo {
+  final FirebaseAuthService _firebaseAuthService;
+
+  AuthRepoImpl(this._firebaseAuthService);
+
   @override
-  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(String email, String password) {
-    // TODO: implement signInWithEmailAndPassword
-    throw UnimplementedError();
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
+    String email,
+    String password,
+    String name,
+  ) async {
+    try {
+      var user = await _firebaseAuthService.signInWithEmailAndPassword(
+        email,
+        password,
+        name,
+      );
+      return Right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      return Left(ServerFailure('An error occured. Please try again later.'));
+    }
   }
 
   @override
   Future<Either<Failure, UserEntity>> signInWithApple() {
-    // TODO: implement signInWithApple
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, UserEntity>> signInWithFacebook() {
-    // TODO: implement signInWithFacebook
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, UserEntity>> signInWithGoogle() {
-    // TODO: implement signInWithGoogle
     throw UnimplementedError();
   }
 
   @override
   Future<void> signOut() {
-    // TODO: implement signOut
     throw UnimplementedError();
   }
 }

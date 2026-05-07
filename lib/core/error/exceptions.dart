@@ -1,8 +1,8 @@
 // دا كلاس بنستخدمه عشان ن throw Exceptions زي ماحنا عايزين
-class CustomExceptions implements Exception {
+class CustomException implements Exception {
   final String message;
 
-  CustomExceptions(this.message);
+  CustomException(this.message);
 
   @override
   String toString() {

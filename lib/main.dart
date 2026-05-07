@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/di/injection_container.dart' as di;
 import 'package:fruits_hub/core/helper/functions/on_generate_routes.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
@@ -16,6 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  await di.init();
 
   runApp(const FruitHub());
 }

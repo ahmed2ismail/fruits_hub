@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruits_hub/core/error/exceptions.dart';
 
 class FirebaseAuthService {
-  Future<User> signInWithEmailAndPassword(
+  Future<User> createUserWithEmailAndPassword(
     String email,
     String password,
     String name,

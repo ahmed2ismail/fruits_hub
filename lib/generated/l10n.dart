@@ -448,6 +448,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You must agree to our Terms and Conditions`
+  String get termsAndConditionErrorMessage {
+    return Intl.message(
+      'You must agree to our Terms and Conditions',
+      name: 'termsAndConditionErrorMessage',
+      desc: 'Message for agreeing to our Terms and Conditions',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

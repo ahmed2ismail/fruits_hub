@@ -38,5 +38,6 @@
     "ConfirmPassword": "تأكيد كلمة المرور",
     "CreateNewPasswordTextButton": "إنشاء كلمة مرور جديدة",
     "SuccefulChangedPasswordMessage": "تم تغيير كلمة المرور بنجاح",
-    "generalFailureMessage": "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق."
+    "generalFailureMessage": "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق.",
+    "termsAndConditionErrorMessage": "يجب الموافقة على الشروط والأحكام الخاصة بنا"
 }

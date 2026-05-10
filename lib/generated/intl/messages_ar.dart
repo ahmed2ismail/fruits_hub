@@ -88,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "رقم الهاتف متبوعا برمز الدولة"),
         "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخط"),
+        "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(
+            "يجب الموافقة على الشروط والأحكام الخاصة بنا"),
         "toOurTermsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام الخاصة بنا")
       };

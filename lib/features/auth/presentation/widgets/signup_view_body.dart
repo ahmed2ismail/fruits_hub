@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/helper/functions/build_error_bar.dart';
 import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
 import 'package:fruits_hub/core/widgets/custom_default_app_button.dart';
@@ -51,8 +52,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     _isButtonEnabledNotifier.value =
         _fullNameController.text.isNotEmpty &&
         _emailController.text.isNotEmpty &&
-        _passwordController.text.isNotEmpty &&
-        _isTermsAccepted;
+        _passwordController.text.isNotEmpty;
   }
 
   @override
@@ -151,13 +151,22 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   onPressed: isEnabled
                       ? () {
                           if (_formKey.currentState!.validate()) {
-                            context
-                                .read<SignupCubit>()
-                                .createUserWithEmailAndPassword(
-                                  _emailController.text,
-                                  _passwordController.text,
-                                  _fullNameController.text,
-                                );
+                            if (_isTermsAccepted) {
+                              context
+                                  .read<SignupCubit>()
+                                  .createUserWithEmailAndPassword(
+                                    _emailController.text,
+                                    _passwordController.text,
+                                    _fullNameController.text,
+                                  );
+                            } else {
+                              buildErrorBar(
+                                context,
+                                message: S
+                                    .of(context)
+                                    .termsAndConditionErrorMessage,
+                              );
+                            }
                           } else {
                             setState(() {
                               _autoValidateMode = AutovalidateMode.always;

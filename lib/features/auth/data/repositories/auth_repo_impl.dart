@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:fruits_hub/core/error/exceptions.dart';
 import 'package:fruits_hub/core/error/failures.dart';
 import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
@@ -28,6 +31,11 @@ class AuthRepoImpl implements AuthRepo {
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in AuthRepoImpl.createUserWithEmailAndPassword(catch_Exception): ${e.toString()} and code is ${e.runtimeType}',
+        );
+      }
       return Left(
         ServerFailure(
           isArabic()

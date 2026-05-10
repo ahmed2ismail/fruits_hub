@@ -155,6 +155,9 @@
     "generalFailureMessage": "An error occured. Please try again later.",
     "@generalFailureMessage": {
         "description": "Message for a general failure"
+    },
+    "termsAndConditionErrorMessage": "You must agree to our Terms and Conditions",
+    "@termsAndConditionErrorMessage": {
+        "description": "Message for agreeing to our Terms and Conditions"
     }
-    
 }

@@ -88,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerText":
             MessageLookupByLibrary.simpleMessage(" Create an account"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+        "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(
+            "You must agree to our Terms and Conditions"),
         "toOurTermsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms and Conditions")
       };

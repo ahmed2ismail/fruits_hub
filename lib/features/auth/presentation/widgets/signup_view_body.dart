@@ -5,8 +5,8 @@ import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
 import 'package:fruits_hub/core/widgets/custom_default_app_button.dart';
 import 'package:fruits_hub/core/widgets/custom_text_form_field.dart';
-import 'package:fruits_hub/features/auth/presentation/manager/cubits/signup_cubit.dart';
-import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/manager/cubits/signup_cubit/signup_cubit.dart';
+import 'package:fruits_hub/features/auth/presentation/view/signin_view.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/custom_check_have_account_text_span.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/terms_and_conditions_widget.dart';
 import 'package:fruits_hub/generated/l10n.dart';
@@ -184,7 +184,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               mainText: S.of(context).alreadyHaveAccountText,
               subText: S.of(context).loginText,
               subTextOnTap: () {
-                Navigator.pushReplacementNamed(context, LoginView.routeName);
+                Navigator.pushReplacementNamed(context, SigninView.routeName);
               },
             ),
           ],

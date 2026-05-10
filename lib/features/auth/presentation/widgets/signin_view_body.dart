@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
+import 'package:fruits_hub/features/auth/presentation/manager/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/view/forgot_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/signup_view.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/custom_check_have_account_text_span.dart';
@@ -10,16 +13,19 @@ import 'package:fruits_hub/core/widgets/custom_text_Form_field.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/social_login_section.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class SigninViewBody extends StatefulWidget {
+  const SigninViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SigninViewBody> createState() => _SigninViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _SigninViewBodyState extends State<SigninViewBody> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late AutovalidateMode _autoValidateMode = AutovalidateMode.disabled;
+  bool get valid => _formKey.currentState?.validate() ?? false;
 
   @override
   void dispose() {
@@ -44,9 +50,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
       child: Form(
+        key: _formKey,
         // هذا السطر يجعل الـ Form يعيد بناء نفسه مع كل تغيير من المستخدم
         // مما يسمح لنا بتحديث حالة الزر بشكل تفاعلي
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        // autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: _autoValidateMode,
         child: Column(
           children: [
             const SizedBox(height: 24),
@@ -55,6 +63,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               labelText: S.of(context).emailTextFieldLabel,
               keyboardType: TextInputType.emailAddress,
               onChanged: (value) => setState(() {}),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return isEnglish()
+                      ? 'Please enter your email'
+                      : 'الرجاء إدخال البريد الإلكتروني.';
+                } else if (!value.contains('@')) {
+                  return isEnglish()
+                      ? 'Please enter a valid email'
+                      : 'الرجاء إدخال بريد إلكتروني صالح.';
+                } else {
+                  return null;
+                }
+              },
             ),
             const SizedBox(height: 16),
             CustomTextFormField(
@@ -63,6 +84,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               keyboardType: TextInputType.visiblePassword,
               isPassword: true,
               onChanged: (value) => setState(() {}),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return isEnglish()
+                      ? 'Please enter your password'
+                      : 'الرجاء إدخال كلمة المرور.';
+                } else if (value.length < 8) {
+                  return isEnglish()
+                      ? 'Password must be at least 8 characters'
+                      : 'كلمة المرور يجب ألا تقل عن 8 أحرف.';
+                } else {
+                  return null;
+                }
+              },
             ),
             const SizedBox(height: 16),
             CustomForgetPasswordAndRecoveryTextButton(
@@ -74,6 +108,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             CustomDefaultAppButton(
               onPressed: isButtonEnabled
                   ? () {
+                      if (valid) {
+                        context.read<SigninCubit>().signInWithEmailAndPassword(_emailController.text, _passwordController.text);
+                      } else {
+                        setState(() {
+                          // دا عشان يظهر رسائل الخطأ فوراً إذا كانت البيانات غير صالحة
+                          _autoValidateMode = AutovalidateMode.always;
+                        });
+                      }
                       // TODO: navigate to home view
                       // Navigator.pushNamed(context, HomeView.routeName);
                     }
@@ -84,7 +126,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               mainText: S.of(context).dontHaveAccountText,
               subText: S.of(context).registerText,
               subTextOnTap: () {
-                Navigator.pushReplacementNamed(context, SignupView.routeName);
+                Navigator.pushNamed(context, SignupView.routeName);
               },
             ),
             const SizedBox(height: 33),

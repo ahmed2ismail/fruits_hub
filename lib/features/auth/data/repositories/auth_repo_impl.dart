@@ -47,6 +47,35 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
+    String email,
+    String password,
+  ) async {
+    try {
+      var user = await _firebaseAuthService.signInWithEmailAndPassword(
+        email,
+        password,
+      );
+      return Right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in AuthRepoImpl.signInWithEmailAndPassword(catch_Exception): ${e.toString()} and code is ${e.runtimeType}',
+        );
+      }
+      return Left(
+        ServerFailure(
+          isArabic()
+              ? "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق.\n رسالة الخطأ هي: $e"
+              : 'An error occured. Please try again later.\n error message is: $e',
+        ),
+      );
+    }
+  }
+
+  @override
   Future<Either<Failure, UserEntity>> signInWithApple() {
     throw UnimplementedError();
   }

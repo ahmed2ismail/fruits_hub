@@ -4,7 +4,7 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/generated/l10n.dart';
-import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/view/signin_view.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({
@@ -28,7 +28,7 @@ class SkipButton extends StatelessWidget {
             Prefs.setBool(key: AppConstants.kOnboardingVisitedKey, value: true);
             Navigator.pushNamedAndRemoveUntil(
               context,
-              LoginView.routeName,
+              SigninView.routeName,
               (route) => false,
             );
           },

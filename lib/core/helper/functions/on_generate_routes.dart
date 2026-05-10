@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/features/auth/presentation/view/forgot_password_view.dart';
-import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/view/signin_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/password_recovery_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/reset_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/signup_view.dart';
@@ -23,17 +23,21 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     case OnBoardingView.routeName:
       return MaterialPageRoute(builder: (context) => const OnBoardingView());
 
-    case LoginView.routeName:
-      return MaterialPageRoute(builder: (context) => const LoginView());
+    case SigninView.routeName:
+      return MaterialPageRoute(builder: (context) => const SigninView());
 
     case SignupView.routeName:
       return MaterialPageRoute(builder: (context) => const SignupView());
 
     case ForgotPasswordView.routeName:
-      return MaterialPageRoute(builder: (context) => const ForgotPasswordView());
+      return MaterialPageRoute(
+        builder: (context) => const ForgotPasswordView(),
+      );
 
     case PasswordRecoveryView.routeName:
-      return MaterialPageRoute(builder: (context) => const PasswordRecoveryView());
+      return MaterialPageRoute(
+        builder: (context) => const PasswordRecoveryView(),
+      );
 
     case ResetPasswordView.routeName:
       return MaterialPageRoute(builder: (context) => const ResetPasswordView());

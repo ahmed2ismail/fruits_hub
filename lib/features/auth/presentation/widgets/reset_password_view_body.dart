@@ -7,7 +7,7 @@ import 'package:fruits_hub/features/auth/presentation/widgets/auth_user_helper_m
 import 'package:fruits_hub/generated/l10n.dart';
 import 'package:fruits_hub/core/widgets/custom_success_dialog.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
-import 'package:fruits_hub/features/auth/presentation/view/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/view/signin_view.dart';
 
 class ResetPasswordViewBody extends StatefulWidget {
   const ResetPasswordViewBody({super.key});
@@ -92,7 +92,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                       if (context.mounted) {
                         Navigator.pushNamedAndRemoveUntil(
                           context,
-                          LoginView.routeName,
+                          SigninView.routeName,
                           (route) => false,
                         );
                       }

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fruits_hub/core/error/exceptions.dart';
 import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 CustomException _handleFirebaseAuthException(FirebaseAuthException e) {
   String message;
@@ -181,14 +182,19 @@ CustomException _handleFirebaseAuthException(FirebaseAuthException e) {
 }
 
 class FirebaseAuthService {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
   Future<User> createUserWithEmailAndPassword(
     String email,
     String password,
     String name,
   ) async {
     try {
-      final credential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
+      final credential = await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       // After creating the user, update their profile with the provided name.
       if (credential.user != null) {
         await credential.user!.updateDisplayName(name);
@@ -218,7 +224,7 @@ class FirebaseAuthService {
 
   Future<User> signInWithEmailAndPassword(String email, String password) async {
     try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final credential = await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -242,5 +248,58 @@ class FirebaseAuthService {
             : 'An unexpected error occurred. Please try again.',
       );
     }
+  }
+
+  Future<User> signInWithGoogle() async {
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+
+      // If the user cancels the sign-in flow, googleUser will be null.
+      if (googleUser == null) {
+        // User cancelled the login
+        throw FirebaseAuthException(code: 'web-context-cancelled');
+      }
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      // Create a new credential
+      final OAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      final userCredential = await _firebaseAuth.signInWithCredential(
+        credential,
+      );
+
+      return userCredential.user!;
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in FirebaseAuthService.signInWithGoogle(FirebaseAuthException): ${e.toString()} and code is ${e.code}',
+        );
+      }
+      throw _handleFirebaseAuthException(e);
+    } catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in FirebaseAuthService.signInWithGoogle(catch_Exception): ${e.toString()} and code is ${e.runtimeType}',
+        );
+      }
+      throw CustomException(
+        isArabic()
+            ? "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى."
+            : 'An unexpected error occurred. Please try again.',
+      );
+    }
+  }
+
+  Future<void> signOut() async {
+    await _googleSignIn.signOut();
+    await _firebaseAuth.signOut();
   }
 }

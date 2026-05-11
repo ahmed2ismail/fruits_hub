@@ -76,22 +76,43 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signInWithApple() {
-    throw UnimplementedError();
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await _firebaseAuthService.signInWithGoogle();
+      return Right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in AuthRepoImpl.signInWithGoogle(catch_Exception): ${e.toString()} and code is ${e.runtimeType}',
+        );
+      }
+      return Left(
+        ServerFailure(
+          isArabic()
+              ? "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق.\n رسالة الخطأ هي: $e"
+              : 'An error occured. Please try again later.\n error message is: $e',
+        ),
+      );
+    }
   }
 
   @override
   Future<Either<Failure, UserEntity>> signInWithFacebook() {
-    throw UnimplementedError();
+    // TODO: Implement Facebook Sign-In
+    throw UnimplementedError('Facebook sign-in is not implemented yet.');
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signInWithGoogle() {
-    throw UnimplementedError();
+  Future<Either<Failure, UserEntity>> signInWithApple() {
+    // TODO: Implement Apple Sign-In
+    throw UnimplementedError('Apple sign-in is not implemented yet.');
   }
 
   @override
-  Future<void> signOut() {
-    throw UnimplementedError();
+  Future<void> signOut() async {
+    // No need for try-catch here as signOut rarely fails and doesn't return a value.
+    await _firebaseAuthService.signOut();
   }
 }

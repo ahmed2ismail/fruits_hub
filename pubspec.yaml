@@ -41,6 +41,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   get_it: ^9.2.1
+  google_sign_in: ^6.2.1
   intl: ^0.20.2
   meta: ^1.17.0
   modal_progress_hud_nsn: ^0.5.1
@@ -76,7 +77,6 @@ flutter_launcher_icons:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

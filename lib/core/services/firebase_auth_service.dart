@@ -397,6 +397,19 @@ class FirebaseAuthService {
         oauthCredential,
       );
       return userCredential.user!;
+    } on SignInWithAppleNotSupportedException {
+      // This is an expected exception on non-Apple platforms like Windows/Android.
+      // The UI should ideally not show the Apple Sign-In button on these platforms.
+      if (kDebugMode) {
+        isArabic()
+            ? log('تسجيل الدخول باستخدام Apple غير مدعوم على هذا الجهاز.')
+            : log('Sign in with Apple is not supported on this platform.');
+      }
+      throw CustomException(
+        isArabic()
+            ? "تسجيل الدخول باستخدام آبل غير مدعوم على هذا الجهاز."
+            : 'Sign in with Apple is not supported on this device.',
+      );
     } on FirebaseAuthException catch (e) {
       if (kDebugMode) {
         log(

@@ -24,7 +24,7 @@ class SocialLoginSection extends StatelessWidget {
           text: S.of(context).loginWithAppleText,
           iconPath: AppAssets.imagesAppleIcon,
           onPressed: () {
-            // TODO: add apple login logic
+            context.read<SigninCubit>().signInWithApple();
           },
         ),
         const SizedBox(height: 16),
@@ -32,7 +32,7 @@ class SocialLoginSection extends StatelessWidget {
           text: S.of(context).loginWithFacebookText,
           iconPath: AppAssets.imagesFacebookIcon,
           onPressed: () {
-            // TODO: add facebook login logic
+            context.read<SigninCubit>().signInWithFacebook();
           },
         ),
       ],

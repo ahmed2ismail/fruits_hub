@@ -1,9 +1,14 @@
 import 'dart:developer';
+import 'dart:convert';
+import 'dart:math' hide log;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruits_hub/core/error/exceptions.dart';
 import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:crypto/crypto.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 CustomException _handleFirebaseAuthException(FirebaseAuthException e) {
   String message;
@@ -184,6 +189,7 @@ CustomException _handleFirebaseAuthException(FirebaseAuthException e) {
 class FirebaseAuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final FacebookAuth _facebookAuth = FacebookAuth.instance;
 
   Future<User> createUserWithEmailAndPassword(
     String email,
@@ -298,8 +304,123 @@ class FirebaseAuthService {
     }
   }
 
+  Future<User> signInWithFacebook() async {
+    try {
+      final LoginResult loginResult = await _facebookAuth.login();
+
+      if (loginResult.status == LoginStatus.success) {
+        // Create a credential from the access token
+        final OAuthCredential facebookAuthCredential =
+            FacebookAuthProvider.credential(
+              loginResult.accessToken!.tokenString,
+            );
+
+        // Once signed in, return the UserCredential
+        return (await _firebaseAuth.signInWithCredential(
+          facebookAuthCredential,
+        )).user!;
+      } else if (loginResult.status == LoginStatus.cancelled) {
+        throw FirebaseAuthException(code: 'web-context-cancelled');
+      } else {
+        throw CustomException(
+          isArabic()
+              ? 'فشل تسجيل الدخول باستخدام فيسبوك: ${loginResult.message}'
+              : 'Facebook login failed: ${loginResult.message}',
+        );
+      }
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in FirebaseAuthService.signInWithFacebook(FirebaseAuthException): ${e.toString()} and code is ${e.code}',
+        );
+      }
+      throw _handleFirebaseAuthException(e);
+    } catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in FirebaseAuthService.signInWithFacebook(catch_Exception): ${e.toString()} and code is ${e.runtimeType}',
+        );
+      }
+      throw CustomException(
+        isArabic()
+            ? "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى."
+            : 'An unexpected error occurred. Please try again.',
+      );
+    }
+  }
+
+  // --- SignInWithApple ---
+  /// Generates a cryptographically secure random nonce, to be included in a
+  /// credential request.
+  String generateNonce([int length = 32]) {
+    final charset =
+        '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
+    final random = Random.secure();
+    return List.generate(
+      length,
+      (_) => charset[random.nextInt(charset.length)],
+    ).join();
+  }
+
+  /// Returns the sha256 hash of [input] in hex notation.
+  String sha256ofString(String input) {
+    final bytes = utf8.encode(input);
+    final digest = sha256.convert(bytes);
+    return digest.toString();
+  }
+
+  Future<User> signInWithApple() async {
+    try {
+      // To prevent replay attacks with the credential returned from Apple, we
+      // include a nonce in the credential request. When signing in with
+      // Firebase, the nonce in the id token returned by Apple, is expected to
+      // match the sha256 hash of `rawNonce`.
+      final rawNonce = generateNonce();
+      final nonce = sha256ofString(rawNonce);
+
+      // Request credential for the currently signed in Apple account.
+      final appleCredential = await SignInWithApple.getAppleIDCredential(
+        scopes: [
+          AppleIDAuthorizationScopes.email,
+          AppleIDAuthorizationScopes.fullName,
+        ],
+        nonce: nonce,
+      );
+
+      // Create an `OAuthCredential` from the credential returned by Apple.
+      final oauthCredential = OAuthProvider(
+        "apple.com",
+      ).credential(idToken: appleCredential.identityToken, rawNonce: rawNonce);
+
+      // Sign in the user with Firebase.
+      final userCredential = await _firebaseAuth.signInWithCredential(
+        oauthCredential,
+      );
+      return userCredential.user!;
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in FirebaseAuthService.signInWithApple(FirebaseAuthException): ${e.toString()} and code is ${e.code}',
+        );
+      }
+      throw _handleFirebaseAuthException(e);
+    } catch (e) {
+      if (kDebugMode) {
+        log(
+          'Exception in FirebaseAuthService.signInWithApple(catch_Exception): ${e.toString()} and code is ${e.runtimeType}',
+        );
+      }
+      throw CustomException(
+        isArabic()
+            ? "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى."
+            : 'An unexpected error occurred. Please try again.',
+      );
+    }
+  }
+
   Future<void> signOut() async {
     await _googleSignIn.signOut();
     await _firebaseAuth.signOut();
+    await _facebookAuth.logOut();
   }
 }

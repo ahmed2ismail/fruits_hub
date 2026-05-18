@@ -191,6 +191,14 @@ class FirebaseAuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
 
+  Future<User> deleteUser() async {
+    final currentUser = _firebaseAuth.currentUser;
+    if (currentUser != null) {
+      await currentUser.delete();
+    }
+    return currentUser!;
+  }
+
   Future<User> createUserWithEmailAndPassword(
     String email,
     String password,

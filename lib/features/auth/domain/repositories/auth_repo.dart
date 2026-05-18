@@ -20,4 +20,7 @@ abstract class AuthRepo {
 
   // هتستخدم عشان اعمل تسجيل خروج من التطبيق await FirebaseAuth.instance.signOut();
   Future<void> signOut();
+
+  Future addUserData({required UserEntity user});
+  Future<UserEntity> getUserData({required String uId});
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/core/helper/functions/build_error_bar.dart';
+import 'package:fruits_hub/core/helper/functions/custom_snack_bar.dart';
 import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
 import 'package:fruits_hub/core/widgets/custom_default_app_button.dart';
@@ -160,7 +160,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                                     _fullNameController.text,
                                   );
                             } else {
-                              buildErrorBar(
+                              showCustomSnackBar(
                                 context,
                                 message: S
                                     .of(context)

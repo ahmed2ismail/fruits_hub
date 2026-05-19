@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/helper/functions/build_error_bar.dart';
+import 'package:fruits_hub/core/helper/functions/custom_snack_bar.dart';
 import 'package:fruits_hub/core/widgets/custom_progress_hud_indicator.dart';
 import 'package:fruits_hub/features/auth/presentation/manager/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/signin_view_body.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/generated/l10n.dart';
 
 class SigninViewBodyBlocConsumer extends StatelessWidget {
   const SigninViewBodyBlocConsumer({super.key});
@@ -13,9 +14,18 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SigninCubit, SigninState>(
       listener: (context, state) {
         if (state is SigninSuccess) {
+          showCustomSnackBar(
+            context,
+            message: S.of(context).SigninSuccessMessage,
+            type: SnackBarType.success,
+          );
           // TODO: navigate to home view
         } else if (state is SigninFailure) {
-          buildErrorBar(context, message: state.message);
+          showCustomSnackBar(
+            context,
+            message: state.message,
+            type: SnackBarType.error,
+          );
         }
       },
       builder: (context, state) {

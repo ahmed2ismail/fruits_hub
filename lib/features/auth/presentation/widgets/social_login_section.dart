@@ -13,10 +13,11 @@ class SocialLoginSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Google and Facebook are available on mobile (Android/iOS) and Web.
+        // Google and Facebook are available on mobile (Android/iOS) and (Web/windows).
         if (kIsWeb ||
             defaultTargetPlatform == TargetPlatform.android ||
-            defaultTargetPlatform == TargetPlatform.iOS) ...[
+            defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.windows) ...[
           SocialLoginButton(
             text: S.of(context).loginWithGoogleText,
             iconPath: AppAssets.imagesGoogleIcon,

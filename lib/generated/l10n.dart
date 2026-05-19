@@ -458,6 +458,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Account created successfully`
+  String get SignupSuccessMessage {
+    return Intl.message(
+      'Account created successfully',
+      name: 'SignupSuccessMessage',
+      desc: 'Message for a successful account creation',
+      args: [],
+    );
+  }
+
+  /// `Failed to create account. Please try again.`
+  String get SignupFailureMessage {
+    return Intl.message(
+      'Failed to create account. Please try again.',
+      name: 'SignupFailureMessage',
+      desc: 'Message for a failed account creation',
+      args: [],
+    );
+  }
+
+  /// `Logged in successfully`
+  String get SigninSuccessMessage {
+    return Intl.message(
+      'Logged in successfully',
+      name: 'SigninSuccessMessage',
+      desc: 'Message for a successful login',
+      args: [],
+    );
+  }
+
+  /// `Failed to log in. Please try again.`
+  String get SigninFailureMessage {
+    return Intl.message(
+      'Failed to log in. Please try again.',
+      name: 'SigninFailureMessage',
+      desc: 'Message for a failed login',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

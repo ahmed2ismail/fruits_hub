@@ -21,6 +21,9 @@ abstract class AuthRepo {
   // هتستخدم عشان اعمل تسجيل خروج من التطبيق await FirebaseAuth.instance.signOut();
   Future<void> signOut();
 
+// عشان اضيف بيانات المستخدم في ال database بعد ما اعمل تسجيل دخول او تسجيل حساب جديد عشان اقدر اعرضها في ال profile page
   Future addUserData({required UserEntity user});
+
+// هتستخدم عشان اعرض بيانات المستخدم في ال profile page بعد ما اعمل تسجيل دخول او تسجيل حساب جديد عشان اقدر اعرضها في ال profile page عن طريق ال uId اللي بترجعلي من ال createUserWithEmailAndPassword او signInWithEmailAndPassword او signInWithGoogle او signInWithApple او signInWithFacebook عشان اقدر اعرض بيانات المستخدم في ال profile page
   Future<UserEntity> getUserData({required String uId});
 }

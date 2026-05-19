@@ -47,6 +47,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمة مرور جديدة"),
         "ResetYourPasswordHelperMessage": MessageLookupByLibrary.simpleMessage(
             "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول"),
+        "SigninFailureMessage": MessageLookupByLibrary.simpleMessage(
+            "فشل في تسجيل الدخول. يرجى المحاولة مرة أخرى."),
+        "SigninSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("تم تسجيل الدخول بنجاح"),
+        "SignupFailureMessage": MessageLookupByLibrary.simpleMessage(
+            "فشل في إنشاء الحساب. يرجى المحاولة مرة أخرى."),
+        "SignupSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("تم إنشاء الحساب بنجاح"),
         "SuccefulChangedPasswordMessage":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "alreadyHaveAccountText":

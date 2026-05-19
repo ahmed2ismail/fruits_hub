@@ -159,5 +159,21 @@
     "termsAndConditionErrorMessage": "You must agree to our Terms and Conditions",
     "@termsAndConditionErrorMessage": {
         "description": "Message for agreeing to our Terms and Conditions"
+    },
+    "SignupSuccessMessage": "Account created successfully",
+    "@SignupSuccessMessage": {
+        "description": "Message for a successful account creation"
+    },
+    "SignupFailureMessage": "Failed to create account. Please try again.",
+    "@SignupFailureMessage": {
+        "description": "Message for a failed account creation"
+    },
+    "SigninSuccessMessage": "Logged in successfully",
+    "@SigninSuccessMessage": {
+        "description": "Message for a successful login"
+    },
+    "SigninFailureMessage": "Failed to log in. Please try again.",
+    "@SigninFailureMessage": {
+        "description": "Message for a failed login"
     }
 }

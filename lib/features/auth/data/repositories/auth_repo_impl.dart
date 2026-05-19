@@ -139,7 +139,7 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<dynamic> addUserData({required UserEntity user}) async {
     await _databaseService.addData(
-      path: BackendEndpoints.addUserData,
+      path: BackendEndpoints.usersCollection,
       data: user.toMap(),
       documentId: user.uId,
     );
@@ -148,7 +148,7 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<UserEntity> getUserData({required String uId}) async {
     final data = await _databaseService.getData(
-      path: BackendEndpoints.getUserData,
+      path: BackendEndpoints.usersCollection,
       documentId: uId,
     );
     return UserModel.fromjson(data);
@@ -175,7 +175,7 @@ class AuthRepoImpl implements AuthRepo {
       try {
         // 1. التحقق هل المستخدم موجود بالفعل في قاعدة البيانات؟ (هل سجل دخول قبل كده؟)
         final exists = await _databaseService.checkIfDataExists(
-          path: BackendEndpoints.addUserData,
+          path: BackendEndpoints.usersCollection,
           documentId: userEntity.uId,
         );
 

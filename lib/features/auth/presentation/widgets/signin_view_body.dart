@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
+import 'package:fruits_hub/core/helper/functions/app_validators.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
+import 'package:fruits_hub/core/utils/app_spacing.dart';
 import 'package:fruits_hub/features/auth/presentation/manager/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/view/forgot_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/signup_view.dart';
@@ -57,59 +58,38 @@ class _SigninViewBodyState extends State<SigninViewBody> {
         autovalidateMode: _autoValidateMode,
         child: Column(
           children: [
-            const SizedBox(height: 24),
+            AppSpacing.verticalSpacing24,
             CustomTextFormField(
               controller: _emailController,
               labelText: S.of(context).emailTextFieldLabel,
               keyboardType: TextInputType.emailAddress,
               onChanged: (value) => setState(() {}),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return isEnglish()
-                      ? 'Please enter your email'
-                      : 'الرجاء إدخال البريد الإلكتروني.';
-                } else if (!value.contains('@')) {
-                  return isEnglish()
-                      ? 'Please enter a valid email'
-                      : 'الرجاء إدخال بريد إلكتروني صالح.';
-                } else {
-                  return null;
-                }
-              },
+              validator: AppValidators.validateEmail,
             ),
-            const SizedBox(height: 16),
+            AppSpacing.verticalSpacing16,
             CustomTextFormField(
               controller: _passwordController,
               labelText: S.of(context).passwordTextFieldLabel,
               keyboardType: TextInputType.visiblePassword,
               isPassword: true,
               onChanged: (value) => setState(() {}),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return isEnglish()
-                      ? 'Please enter your password'
-                      : 'الرجاء إدخال كلمة المرور.';
-                } else if (value.length < 8) {
-                  return isEnglish()
-                      ? 'Password must be at least 8 characters'
-                      : 'كلمة المرور يجب ألا تقل عن 8 أحرف.';
-                } else {
-                  return null;
-                }
-              },
+              validator: AppValidators.validatePassword,
             ),
-            const SizedBox(height: 16),
+            AppSpacing.verticalSpacing16,
             CustomForgetPasswordAndRecoveryTextButton(
               onPressed: () {
                 Navigator.pushNamed(context, ForgotPasswordView.routeName);
               },
             ),
-            const SizedBox(height: 33),
+            AppSpacing.verticalSpacing33,
             CustomDefaultAppButton(
               onPressed: isButtonEnabled
                   ? () {
                       if (valid) {
-                        context.read<SigninCubit>().signInWithEmailAndPassword(_emailController.text, _passwordController.text);
+                        context.read<SigninCubit>().signInWithEmailAndPassword(
+                          _emailController.text,
+                          _passwordController.text,
+                        );
                       } else {
                         setState(() {
                           // دا عشان يظهر رسائل الخطأ فوراً إذا كانت البيانات غير صالحة
@@ -121,7 +101,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     }
                   : null,
             ),
-            const SizedBox(height: 33),
+            AppSpacing.verticalSpacing33,
             CustomCheckHaveAccountTextSpan(
               mainText: S.of(context).dontHaveAccountText,
               subText: S.of(context).registerText,
@@ -129,9 +109,9 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                 Navigator.pushNamed(context, SignupView.routeName);
               },
             ),
-            const SizedBox(height: 33),
+            AppSpacing.verticalSpacing33,
             const CustomOrDivider(),
-            const SizedBox(height: 16),
+            AppSpacing.verticalSpacing16,
 
             // تم استخراج أزرار السوشيال ميديا في ويدجت منفصلة لتنظيف الكود
             const SocialLoginSection(),

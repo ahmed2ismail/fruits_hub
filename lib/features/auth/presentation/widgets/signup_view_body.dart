@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/helper/functions/app_validators.dart';
 import 'package:fruits_hub/core/helper/functions/custom_snack_bar.dart';
-import 'package:fruits_hub/core/helper/functions/get_current_local.dart';
 import 'package:fruits_hub/core/utils/app_constants.dart';
+import 'package:fruits_hub/core/utils/app_spacing.dart';
 import 'package:fruits_hub/core/widgets/custom_default_app_button.dart';
 import 'package:fruits_hub/core/widgets/custom_text_form_field.dart';
 import 'package:fruits_hub/features/auth/presentation/manager/cubits/signup_cubit/signup_cubit.dart';
@@ -71,68 +72,32 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         autovalidateMode: _autoValidateMode,
         child: Column(
           children: [
-            const SizedBox(height: 24),
+            AppSpacing.verticalSpacing24,
             CustomTextFormField(
               controller: _fullNameController,
               labelText: S.of(context).FullName,
               keyboardType: TextInputType.name,
               onSaved: (value) {},
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return isEnglish()
-                      ? 'Please enter your full name'
-                      : "الرجاء إدخال الاسم الكامل.";
-                } else if (value.length < 3) {
-                  return isEnglish()
-                      ? 'Full name must be at least 3 characters'
-                      : 'الاسم الكامل يجب الا يقل عن 3 أحرف.';
-                } else {
-                  return null;
-                }
-              },
+              validator: AppValidators.validateFullName,
             ),
-            const SizedBox(height: 16),
+            AppSpacing.verticalSpacing16,
             CustomTextFormField(
               controller: _emailController,
               labelText: S.of(context).emailTextFieldLabel,
               keyboardType: TextInputType.emailAddress,
               onSaved: (value) {},
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return isEnglish()
-                      ? 'Please enter your email'
-                      : 'الرجاء إدخال البريد الإلكتروني.';
-                } else if (!value.contains('@')) {
-                  return isEnglish()
-                      ? 'Please enter a valid email'
-                      : 'الرجاء إدخال بريد إلكتروني صالح.';
-                } else {
-                  return null;
-                }
-              },
+              validator: AppValidators.validateEmail,
             ),
-            const SizedBox(height: 16),
+            AppSpacing.verticalSpacing16,
             CustomTextFormField(
               controller: _passwordController,
               labelText: S.of(context).passwordTextFieldLabel,
               keyboardType: TextInputType.visiblePassword,
               isPassword: true,
               onSaved: (value) {},
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return isEnglish()
-                      ? 'Please enter your password'
-                      : 'الرجاء إدخال كلمة المرور.';
-                } else if (value.length < 8) {
-                  return isEnglish()
-                      ? 'Password must be at least 8 characters'
-                      : 'كلمة المرور يجب ألا تقل عن 8 أحرف.';
-                } else {
-                  return null;
-                }
-              },
+              validator: AppValidators.validatePassword,
             ),
-            const SizedBox(height: 16),
+            AppSpacing.verticalSpacing16,
             TermsAndConditionsWidget(
               onStateChanged: (isAccepted) {
                 // عند تغيير حالة الشروط، نقوم بتحديث الحالة وإعادة بناء الواجهة
@@ -142,7 +107,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 });
               },
             ),
-            const SizedBox(height: 30),
+            AppSpacing.verticalSpacing30,
             ValueListenableBuilder<bool>(
               valueListenable: _isButtonEnabledNotifier,
               builder: (context, isEnabled, child) {
@@ -179,7 +144,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 );
               },
             ),
-            const SizedBox(height: 26),
+            AppSpacing.verticalSpacing26,
             CustomCheckHaveAccountTextSpan(
               mainText: S.of(context).alreadyHaveAccountText,
               subText: S.of(context).loginText,

@@ -183,5 +183,17 @@
     "searchAbout": "Search about.......",
     "@searchAbout": {
         "description": "Hint text for the search text field on the home screen"
+    },
+    "featuredDealsText": "Eid Offers",
+    "@featuredDealsText": {
+        "description": "Text for the featured deals section on the home screen"
+    },
+    "featuredDealsDiscountText": "25% Discount",
+    "@featuredDealsDiscountText": {
+        "description": "Text for the discount on the featured deals section on the home screen"
+    },
+    "shopNowText": "Shop Now",
+    "@shopNowText": {
+        "description": "Text for the 'Shop Now' button on the featured deals section on the home screen"
     }
 }

@@ -67,6 +67,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟ "),
         "emailTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "featuredDealsDiscountText":
+            MessageLookupByLibrary.simpleMessage("خصم 25%"),
+        "featuredDealsText": MessageLookupByLibrary.simpleMessage("عروض العيد"),
         "forgotPasswordText":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "generalFailureMessage": MessageLookupByLibrary.simpleMessage(
@@ -98,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "رقم الهاتف متبوعا برمز الدولة"),
         "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
         "searchAbout": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "shopNowText": MessageLookupByLibrary.simpleMessage("تسوق الان"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخط"),
         "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(
             "يجب الموافقة على الشروط والأحكام الخاصة بنا"),

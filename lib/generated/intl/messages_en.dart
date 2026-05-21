@@ -66,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccountText":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "emailTextFieldLabel": MessageLookupByLibrary.simpleMessage("Email"),
+        "featuredDealsDiscountText":
+            MessageLookupByLibrary.simpleMessage("25% Discount"),
+        "featuredDealsText": MessageLookupByLibrary.simpleMessage("Eid Offers"),
         "forgotPasswordText":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "generalFailureMessage": MessageLookupByLibrary.simpleMessage(
@@ -99,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" Create an account"),
         "searchAbout":
             MessageLookupByLibrary.simpleMessage("Search about......."),
+        "shopNowText": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
         "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(
             "You must agree to our Terms and Conditions"),

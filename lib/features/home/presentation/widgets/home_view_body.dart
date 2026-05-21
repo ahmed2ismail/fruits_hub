@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/featured_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -18,6 +19,7 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: 16),
                 SearchTextField(),
                 SizedBox(height: 12),
+                FeaturedItem(),
               ],
             ),
           ),

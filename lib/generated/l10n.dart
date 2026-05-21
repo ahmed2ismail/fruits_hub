@@ -518,6 +518,38 @@ class S {
       args: [],
     );
   }
+
+  /// `Eid Offers`
+  String get featuredDealsText {
+    return Intl.message(
+      'Eid Offers',
+      name: 'featuredDealsText',
+      desc: 'Text for the featured deals section on the home screen',
+      args: [],
+    );
+  }
+
+  /// `25% Discount`
+  String get featuredDealsDiscountText {
+    return Intl.message(
+      '25% Discount',
+      name: 'featuredDealsDiscountText',
+      desc:
+          'Text for the discount on the featured deals section on the home screen',
+      args: [],
+    );
+  }
+
+  /// `Shop Now`
+  String get shopNowText {
+    return Intl.message(
+      'Shop Now',
+      name: 'shopNowText',
+      desc:
+          'Text for the \'Shop Now\' button on the featured deals section on the home screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

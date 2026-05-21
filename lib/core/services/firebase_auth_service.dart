@@ -191,6 +191,17 @@ class FirebaseAuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
 
+  User? get currentUser => _firebaseAuth.currentUser;
+  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
+  User? getCurrentUser() {
+  return _firebaseAuth.currentUser; // لو بـ null يعني مش مسجل دخول
+}
+  bool isLoggedIn() {
+    return _firebaseAuth.currentUser != null;
+  }
+
+
   Future<User> deleteUser() async {
     final currentUser = _firebaseAuth.currentUser;
     if (currentUser != null) {

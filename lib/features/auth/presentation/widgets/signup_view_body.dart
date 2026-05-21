@@ -137,8 +137,6 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                               _autoValidateMode = AutovalidateMode.always;
                             });
                           }
-                          // TODO: navigate to home view
-                          // Navigator.pushNamed(context, HomeView.routeName);
                         }
                       : null,
                 );

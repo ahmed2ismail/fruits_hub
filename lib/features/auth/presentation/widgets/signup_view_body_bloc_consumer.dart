@@ -5,6 +5,7 @@ import 'package:fruits_hub/core/widgets/custom_progress_hud_indicator.dart';
 import 'package:fruits_hub/features/auth/presentation/manager/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/manager/cubits/signup_cubit/signup_state.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/signup_view_body.dart';
+import 'package:fruits_hub/features/home/presentation/view/home_view.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
@@ -20,7 +21,12 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
             message: S.of(context).SignupSuccessMessage,
             type: SnackBarType.success,
           );
-          // TODO: navigate to home view
+          // توجيه المستخدم للرئيسية وحذف شاشات التسجيل من الخلفية
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomeView.routeName,
+            (route) => false,
+          );
         } else if (state is SignupFailure) {
           showCustomSnackBar(
             context,

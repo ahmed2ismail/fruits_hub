@@ -70,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "generalFailureMessage": MessageLookupByLibrary.simpleMessage(
             "An error occured. Please try again later."),
+        "goodMorningProfileText":
+            MessageLookupByLibrary.simpleMessage("Good Morning !.."),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("Login"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("Login"),
         "loginText": MessageLookupByLibrary.simpleMessage(" Login"),
@@ -95,6 +97,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Phone number with country code"),
         "registerText":
             MessageLookupByLibrary.simpleMessage(" Create an account"),
+        "searchAbout":
+            MessageLookupByLibrary.simpleMessage("Search about......."),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
         "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(
             "You must agree to our Terms and Conditions"),

@@ -71,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "generalFailureMessage": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق."),
+        "goodMorningProfileText":
+            MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginText": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
@@ -95,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumberWithCountryCode": MessageLookupByLibrary.simpleMessage(
             "رقم الهاتف متبوعا برمز الدولة"),
         "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
+        "searchAbout": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخط"),
         "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(
             "يجب الموافقة على الشروط والأحكام الخاصة بنا"),

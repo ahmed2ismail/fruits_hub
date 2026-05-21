@@ -43,5 +43,7 @@
     "SignupSuccessMessage": "تم إنشاء الحساب بنجاح",
     "SignupFailureMessage": "فشل في إنشاء الحساب. يرجى المحاولة مرة أخرى.",
     "SigninSuccessMessage": "تم تسجيل الدخول بنجاح",
-    "SigninFailureMessage": "فشل في تسجيل الدخول. يرجى المحاولة مرة أخرى."
+    "SigninFailureMessage": "فشل في تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+    "goodMorningProfileText": "صباح الخير !..",
+    "searchAbout": "ابحث عن......."
 }

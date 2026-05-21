@@ -175,5 +175,13 @@
     "SigninFailureMessage": "Failed to log in. Please try again.",
     "@SigninFailureMessage": {
         "description": "Message for a failed login"
+    },
+    "goodMorningProfileText": "Good Morning !..",
+    "@goodMorningProfileText": {
+        "description": "Message for welcome user profile picture & name"
+    },
+    "searchAbout": "Search about.......",
+    "@searchAbout": {
+        "description": "Hint text for the search text field on the home screen"
     }
 }

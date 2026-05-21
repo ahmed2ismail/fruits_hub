@@ -498,6 +498,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Good Morning !..`
+  String get goodMorningProfileText {
+    return Intl.message(
+      'Good Morning !..',
+      name: 'goodMorningProfileText',
+      desc: 'Message for welcome user profile picture & name',
+      args: [],
+    );
+  }
+
+  /// `Search about.......`
+  String get searchAbout {
+    return Intl.message(
+      'Search about.......',
+      name: 'searchAbout',
+      desc: 'Hint text for the search text field on the home screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
-import 'package:fruits_hub/features/home/presentation/widgets/featured_item.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/featured_list.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -10,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Column(
@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: 16),
                 SearchTextField(),
                 SizedBox(height: 12),
-                FeaturedItem(),
+                FeaturedList(),
               ],
             ),
           ),

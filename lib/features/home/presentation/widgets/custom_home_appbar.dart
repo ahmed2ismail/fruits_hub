@@ -3,6 +3,7 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/notification_widget.dart';
+import 'package:fruits_hub/core/helper/get_user.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class CustomHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -28,8 +29,7 @@ class CustomHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
           SizedBox(height: 5),
           Text(
-            // TODO: Display User name from Firestore after logged in
-            'أحمد مصطفي',
+            getUser().name,
             style: TextStyles.bold16.copyWith(color: AppColors.grayscale950),
           ),
         ],

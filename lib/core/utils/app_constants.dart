@@ -19,4 +19,6 @@ abstract class AppConstants {
 
   // SharedPreferences Keys
   static const String kOnboardingVisitedKey = 'onboarding_visited';
+
+  static const String kUserData = 'user_data';
 }

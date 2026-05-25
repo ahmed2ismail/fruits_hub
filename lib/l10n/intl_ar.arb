@@ -48,5 +48,11 @@
     "searchAbout": "ابحث عن.......",
     "featuredDealsText": "عروض العيد",
     "featuredDealsDiscountText": "خصم 25%",
-    "shopNowText": "تسوق الان"
+    "shopNowText": "تسوق الان",
+    "bestSeller": "الأكثر مبيعًا",
+    "seeMore": "المزيد",
+    "main": "الرئيسية",
+    "products": "المنتجات",
+    "cart": "سلة التسوق",
+    "profile": "حسابي"
 }

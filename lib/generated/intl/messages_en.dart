@@ -59,8 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password changed successfully"),
         "alreadyHaveAccountText":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "byCreatingAnAccountYouAgree": MessageLookupByLibrary.simpleMessage(
             "By creating an account, you agree to our "),
+        "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("Create New Account"),
         "dontHaveAccountText":
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Login with Facebook"),
         "loginWithGoogleText":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
+        "main": MessageLookupByLibrary.simpleMessage("Home"),
         "newAccount": MessageLookupByLibrary.simpleMessage("New Account"),
         "onBoardingFreshFruitsPrefix":
             MessageLookupByLibrary.simpleMessage("Search and Shopping"),
@@ -98,10 +101,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password"),
         "phoneNumberWithCountryCode": MessageLookupByLibrary.simpleMessage(
             "Phone number with country code"),
+        "products": MessageLookupByLibrary.simpleMessage("Products"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "registerText":
             MessageLookupByLibrary.simpleMessage(" Create an account"),
         "searchAbout":
             MessageLookupByLibrary.simpleMessage("Search about......."),
+        "seeMore": MessageLookupByLibrary.simpleMessage("See More"),
         "shopNowText": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
         "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(

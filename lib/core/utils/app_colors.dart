@@ -10,7 +10,10 @@ abstract class AppColors {
   static const Color whiteOp = Color(0xFFF9FAFA);
   static const Color whiteSoft = Color(0xFFE6E9E9);
   static const Color whiteShift = Color(0xFFDCDEDE);
+  static const Color white_1 = Color(0xFFF3F5F7);
+  static const Color white_2 = Color(0xFFEEEEEE);
   static const Color shadowColor = Color(0x0A000000);
+  static const Color shadowColorSide = Color(0x19000000);
 
   // --- Grayscale (تدرجات الرمادي) ---
   static const Color grayscale500 = Color(0xFF4E5556);

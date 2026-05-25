@@ -40,7 +40,7 @@ class SocialLoginSection extends StatelessWidget {
             defaultTargetPlatform == TargetPlatform.macOS) ...[
           SocialLoginButton(
             text: S.of(context).loginWithAppleText,
-            iconPath: AppAssets.imagesAppleIcon,
+            iconPath: AppAssets.imagesApplIcon,
             onPressed: () {
               context.read<SigninCubit>().signInWithApple();
             },

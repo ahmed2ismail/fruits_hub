@@ -550,6 +550,67 @@ class S {
       args: [],
     );
   }
+
+  /// `Best Seller`
+  String get bestSeller {
+    return Intl.message(
+      'Best Seller',
+      name: 'bestSeller',
+      desc: 'Text for the \'Best Seller\' section on the home screen',
+      args: [],
+    );
+  }
+
+  /// `See More`
+  String get seeMore {
+    return Intl.message(
+      'See More',
+      name: 'seeMore',
+      desc:
+          'Text for the \'See More\' button on the best seller section on the home screen',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get main {
+    return Intl.message(
+      'Home',
+      name: 'main',
+      desc: 'Text for the \'Home\' item in the bottom navigation bar',
+      args: [],
+    );
+  }
+
+  /// `Products`
+  String get products {
+    return Intl.message(
+      'Products',
+      name: 'products',
+      desc: 'Text for the \'Products\' item in the bottom navigation bar',
+      args: [],
+    );
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message(
+      'Cart',
+      name: 'cart',
+      desc: 'Text for the \'Cart\' item in the bottom navigation bar',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: 'Text for the \'Profile\' item in the bottom navigation bar',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

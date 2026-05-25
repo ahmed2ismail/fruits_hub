@@ -59,8 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "alreadyHaveAccountText":
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟ "),
+        "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "byCreatingAnAccountYouAgree": MessageLookupByLibrary.simpleMessage(
             "من خلال إنشاء حساب ، فإنك توافق على "),
+        "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "dontHaveAccountText":
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
         "loginWithGoogleText":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "newAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "onBoardingFreshFruitsPrefix":
             MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
@@ -99,8 +102,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phoneNumberWithCountryCode": MessageLookupByLibrary.simpleMessage(
             "رقم الهاتف متبوعا برمز الدولة"),
+        "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "registerText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
         "searchAbout": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "seeMore": MessageLookupByLibrary.simpleMessage("المزيد"),
         "shopNowText": MessageLookupByLibrary.simpleMessage("تسوق الان"),
         "skipButton": MessageLookupByLibrary.simpleMessage("تخط"),
         "termsAndConditionErrorMessage": MessageLookupByLibrary.simpleMessage(

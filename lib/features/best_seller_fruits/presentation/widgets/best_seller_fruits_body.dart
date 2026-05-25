@@ -1,12 +1,11 @@
 import 'dart:ui';
-import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/widgets/search_text_field.dart';
-import 'package:fruits_hub/features/home/presentation/widgets/best_seller_list_grid_view.dart';
-import 'package:fruits_hub/features/home/presentation/widgets/featured_list.dart';
-import 'package:fruits_hub/features/home/presentation/widgets/best_seller_heading.dart';
 
-class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+import 'package:flutter/material.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/best_seller_heading.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/best_seller_list_grid_view.dart';
+
+class BestSellerFruitsBody extends StatelessWidget {
+  const BestSellerFruitsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +26,8 @@ class HomeViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 16),
-                  SearchTextField(),
-                  SizedBox(height: 12),
-                  FeaturedList(),
-                  SizedBox(height: 12),
-                  BestSellerHeading(),
+                  SizedBox(height: 24),
+                  BestSellerHeading(showSeeMore: false),
                   SizedBox(height: 8),
                 ],
               ),

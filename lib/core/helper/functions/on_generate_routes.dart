@@ -4,6 +4,7 @@ import 'package:fruits_hub/features/auth/presentation/view/signin_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/password_recovery_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/reset_password_view.dart';
 import 'package:fruits_hub/features/auth/presentation/view/signup_view.dart';
+import 'package:fruits_hub/features/best_seller_fruits/presentation/view/best_seller_fruits.dart';
 import 'package:fruits_hub/features/home/presentation/view/home_view.dart';
 import 'package:fruits_hub/features/onBoarding/presentation/view/on_boarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/view/splash_view.dart';
@@ -45,6 +46,9 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
 
     case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => const HomeView());
+
+    case BestSellerFruits.routeName:
+      return MaterialPageRoute(builder: (context) => const BestSellerFruits());
 
     default:
       return MaterialPageRoute(builder: (context) => const SplashView());

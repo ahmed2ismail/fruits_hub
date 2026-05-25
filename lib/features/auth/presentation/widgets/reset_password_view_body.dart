@@ -84,7 +84,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                       builder: (context) {
                         return CustomSuccessDialog(
                           message: S.of(context).SuccefulChangedPasswordMessage,
-                          iconPath: AppAssets.successCheckIcon,
+                          iconPath: AppAssets.imagesSuccessCheckIcon,
                         );
                       },
                     );

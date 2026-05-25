@@ -154,6 +154,15 @@ class AuthRepoImpl implements AuthRepo {
     return UserModel.fromjson(data);
   }
 
+  // @override
+  // Future saveUserData({required UserEntity user}) async {
+  //   await _databaseService.updateData(
+  //     path: BackendEndpoints.usersCollection,
+  //     documentId: user.uId,
+  //     data: user.toMap(),
+  //   );
+  // }
+
   // ---------------------------------------------------------
   // --- Helper Methods (دوال مساعدة لتقليل تكرار الكود) ---
   // ---------------------------------------------------------

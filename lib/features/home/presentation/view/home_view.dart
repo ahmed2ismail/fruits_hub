@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/features/home/presentation/widgets/custom_navigation_bar.dart';
 import 'package:fruits_hub/features/home/presentation/widgets/custom_home_appbar.dart';
 import 'package:fruits_hub/features/home/presentation/widgets/home_view_body.dart';
 
@@ -10,6 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomHomeAppbar(),
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: SafeArea(child: HomeViewBody()),
     );
   }

@@ -76,7 +76,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     ? Padding(
                         padding: const EdgeInsetsGeometry.directional(end: 32),
                         child: SvgPicture.asset(
-                          AppAssets.eyeAuthPassword,
+                          AppAssets.imagesEye,
                           fit: BoxFit.scaleDown,
                           width: 24,
                           height: 24,

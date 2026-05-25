@@ -195,5 +195,29 @@
     "shopNowText": "Shop Now",
     "@shopNowText": {
         "description": "Text for the 'Shop Now' button on the featured deals section on the home screen"
+    },
+    "bestSeller": "Best Seller",
+    "@bestSeller": {
+        "description": "Text for the 'Best Seller' section on the home screen"
+    },
+    "seeMore": "See More",
+    "@seeMore": {
+        "description": "Text for the 'See More' button on the best seller section on the home screen"
+    },
+    "main": "Home",
+    "@main": {
+        "description": "Text for the 'Home' item in the bottom navigation bar"
+    },
+    "products": "Products",
+    "@products": {
+        "description": "Text for the 'Products' item in the bottom navigation bar"
+    },
+    "cart": "Cart",
+    "@cart": {
+        "description": "Text for the 'Cart' item in the bottom navigation bar"
+    },
+    "profile": "Profile",
+    "@profile": {
+        "description": "Text for the 'Profile' item in the bottom navigation bar"
     }
 }

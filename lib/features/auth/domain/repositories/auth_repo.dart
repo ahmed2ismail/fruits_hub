@@ -26,4 +26,21 @@ abstract class AuthRepo {
 
 // هتستخدم عشان اعرض بيانات المستخدم في ال profile page بعد ما اعمل تسجيل دخول او تسجيل حساب جديد عشان اقدر اعرضها في ال profile page عن طريق ال uId اللي بترجعلي من ال createUserWithEmailAndPassword او signInWithEmailAndPassword او signInWithGoogle او signInWithApple او signInWithFacebook عشان اقدر اعرض بيانات المستخدم في ال profile page
   Future<UserEntity> getUserData({required String uId});
+
+  // Future saveUserData({required UserEntity user});
+
+// هتستخدم عشان اعمل حفظ لبيانات المستخدم في ال cache بعد ما اعمل تسجيل دخول او تسجيل حساب جديد عشان اقدر اعرضها في ال profile page عن طريق ال uId اللي بترجعلي من ال createUserWithEmailAndPassword او signInWithEmailAndPassword او signInWithGoogle او signInWithApple او signInWithFacebook عشان اقدر اعرض بيانات المستخدم في ال profile page
+  // Future saveUserDataToCache({required UserEntity user});
+
+// هتستخدم عشان اعرض بيانات المستخدم في ال profile page بعد ما اعمل تسجيل دخول او تسجيل حساب جديد عشان اقدر اعرضها في ال profile page عن طريق ال uId اللي بترجعلي من ال createUserWithEmailAndPassword او signInWithEmailAndPassword او signInWithGoogle او signInWithApple او signInWithFacebook عشان اقدر اعرض بيانات المستخدم في ال profile page
+  // Future<UserEntity> getUserDataFromCache();
+
+// هتستخدم عشان اعمل تحديث لبيانات المستخدم في ال database بعد ما اعمل تسجيل دخول او تسجيل حساب جديد عشان اقدر اعرضها في ال profile page عن طريق ال uId اللي بترجعلي من ال createUserWithEmailAndPassword او signInWithEmailAndPassword او signInWithGoogle او signInWithApple او signInWithFacebook عشان اقدر اعرض بيانات المستخدم في ال profile page
+  // Future<Either<Failure, Unit>> updateUserData({
+  //   required String uId,
+  //   String? name,
+  //   String? email,
+  //   String? phone,
+  //   String? image,
+  // });
 }
